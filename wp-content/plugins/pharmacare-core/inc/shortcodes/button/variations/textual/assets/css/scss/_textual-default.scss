@@ -1,0 +1,18 @@
+.qodef-button {
+    &.qodef-layout--textual {
+        padding: 0 !important;
+        font-size: 15px;
+        color: $heading-color;
+        background-color: transparent;
+        border: 0;
+
+        .qodef-m-text {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        &:hover {
+            color: $heading-color;
+        }
+    }
+}

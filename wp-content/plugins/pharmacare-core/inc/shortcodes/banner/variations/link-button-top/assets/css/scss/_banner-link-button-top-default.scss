@@ -1,0 +1,49 @@
+.qodef-banner {
+	
+	&.qodef-layout--link-button-top {
+		
+		.qodef-m-content-inner {
+			align-items: flex-start;
+			flex-direction: column;
+			justify-content: flex-start;
+			padding: 123px 32px 35px;
+			text-align: center;
+		}
+		
+		.qodef-m-title {
+			margin: 10px 0;
+		}
+		
+		.qodef-m-text {
+			margin: 0;
+		}
+		
+		.qodef-m-button {
+			margin: 3px 0 0;
+			width: 100%;
+			text-align: center;
+			
+			.qodef-button {
+
+				&.qodef-layout--textual {
+					font-size: 14px;
+					font-weight: 700;
+					letter-spacing: 0.1em;
+					line-height: 16px;
+					
+					&:after {
+						content: "\f102";
+						font-weight: 700;
+						font-family: Kiko;
+						display: inline-block;
+						margin-left: 9px;
+						position: relative;
+						font-size: inherit;
+						top: 3px;
+						left: 2px;
+					}
+				}
+			}
+		}
+	}
+}

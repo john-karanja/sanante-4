@@ -1,0 +1,204 @@
+/* ==========================================================================
+   Fixed Background Slider shortcode style - begin
+   ========================================================================== */
+.qodef-fixed-background-slider {
+    position: relative;
+    height: 100%;
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    
+    .qodef-e-content {
+        position: absolute;
+        left: 52px;
+        bottom: 50px;
+        max-width: 70%;
+    
+        .qodef-m-author {
+            display: flex;
+            align-items: center;
+        
+            .qodef-m-author-image {
+                margin-right: 15px;
+            
+                img {
+                    display: inline-block;
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        
+            .qodef-m-author-text{
+                position: relative;
+            }
+        }
+        
+        .qodef-e-title {
+            color: #fff;
+            margin-bottom: 30px;
+        }
+        
+        .qodef-e-author {
+            font-size: 18px;
+            font-weight: 500;
+            font-family: $text-font;
+            color: #fff;
+            letter-spacing: 0;
+            line-height: 21px;
+            margin: 0;
+        }
+        
+        .qodef-e-author-position {
+            font-size: 15px;
+            font-weight: 400;
+            font-family: $text-font;
+            color: #fff;
+            letter-spacing: 0;
+            line-height: 18px;
+            margin: 4px 0;
+        }
+    }
+    
+    &.qodef-layout--fixed-text {
+        padding-top: 140px;
+        overflow: hidden;
+    }
+
+    .qodef-m-swiper {
+        overflow: hidden;
+        height: 100%;
+    }
+    
+    .qodef-m-items {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        float: left;
+    }
+
+    .qodef-m-item {
+        /*height: 0;
+        width: 0;
+        margin: 0 5%;
+        padding-left: 50%;
+        padding-top: calc(50% * 563 / 829); // 829 x 563 is ratio of notebook screen on frame image*/
+    
+        .qodef-m-item-link {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 10;
+        }
+
+        &.swiper-slide {
+           
+            .qodef-e-content {
+
+                .qodef-e-title, .qodef-e-author, .qodef-e-author-position, .qodef-m-author-image {
+                    opacity: 0;
+                }
+            }
+        }
+
+        &.swiper-slide-active, &.swiper-slide-duplicate-active {
+            
+            .qodef-e-content {
+                
+                .qodef-e-title, .qodef-e-author, .qodef-e-author-position, .qodef-m-author-image {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    
+    .swiper-navigation {
+        display: block;
+        width: 100%;
+        height: 90px;
+    }
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+        cursor:pointer;
+        background: rgba(255, 255, 255, 0.25) !important;
+        width:90px;
+        height:90px;
+        border-radius: 50%;
+        position:absolute;
+        display:block;
+        line-height: 90px;
+        z-index:1000;
+        transition: transform .4s cubic-bezier(0.4, 0.1, 0.26, 0.66);
+        
+        &:before {
+            font-family: Kiko;
+            font-weight: 300;
+            font-size:30px;
+            color: #fff;
+            opacity: 1;
+            display:block;
+            line-height: 90px;
+            text-align: center;
+            transform: translateX(0);
+            will-change: transform;
+            transition: transform .3s;
+        }
+
+        &:after {
+            display: none;
+        }
+    }
+
+    .swiper-button-prev {
+        left: 0 !important;
+        height: 90px !important;
+        width: 90px !important;
+        border-radius: 0 90px 90px 0;
+        transform: translateY(-50%) translateX(-45px);
+        
+        &:before {
+            content: "\f101";
+            position: relative;
+            right: -15px;
+        }
+
+        &:hover {
+            transform: translateY(-50%) translateX(-35px);
+
+            &:before {
+                transform: translateX(-3px);
+                transition: transform .3s .2s;
+            }
+        }
+    }
+    
+    .swiper-button-next {
+        right: 0 !important;
+        height: 90px !important;
+        width: 90px !important;
+        border-radius: 90px 0 0 90px;
+        transform: translateY(-50%) translateX(45px);
+        
+        &:before {
+            content: "\f102";
+            position: relative;
+            left: -15px;
+        }
+
+        &:hover {
+            transform: translateY(-50%) translateX(35px);
+
+            &:before {
+                transform: translateX(3px);
+                transition: transform .3s .2s;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Fixed Background Slider shortcode style - end
+   ========================================================================== */

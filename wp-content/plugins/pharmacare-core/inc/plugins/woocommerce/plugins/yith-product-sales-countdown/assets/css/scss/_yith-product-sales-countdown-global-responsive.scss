@@ -1,0 +1,43 @@
+/* ==========================================================================
+   YITH Countdown global default styles
+   ========================================================================== */
+
+.ywpc {
+
+    @include qodefScreenSize680() {
+
+        &-countdown,
+        &-sale-bar {
+            .ywpc-header {
+                //border-bottom: 1px solid #ffffff;
+                padding: 0 23px 10px;
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+        }
+
+        &-countdown {
+            .ywpc-timer {
+                display: block;
+                width: 100%;
+                text-align: left;
+
+                > div {
+                    .ywpc-amount, .ywpc-label {
+                        display:inline;
+                        text-align: left;
+                        padding: 0 3px;
+                        width: auto;
+                    }
+                }
+            }
+        }
+
+        &-sale-bar {
+            .ywpc-bar {
+                width: 100%;
+            }
+        }
+    }
+}

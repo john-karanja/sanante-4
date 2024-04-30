@@ -1,0 +1,29 @@
+1.2.1
+- Updated Revolution Slider plugin to 6.6.8
+- Fixed Demo Menu import
+
+1.2
+- Added WordPress 6.1.1 compatibility
+- Added WooCommerce 7.1.0 compatibility
+- Added PHP8 compatibility
+- Added Enable/Disable Google Fonts option and functionality
+- Updated Qode Framework plugin to 1.2
+- Updated Pharmacare Core plugin to 1.1
+- Updated Revolution Slider plugin to 6.6.7
+- Fixed Arrow Icons on Product Single Lightbox Gallery
+- Fixed deprecated _register_controls function issue
+- Fixed custom class excluding for shortcodes
+- Fixed cart widgets in WordPress 5.8
+- Fixed product list warnings
+- Improved import for PHP8
+- Improved social share
+- Improved theme registration functionality
+- Improved theme registration - code already used case
+- Improved theme registration to block Shortcodes and CPT loading if the theme is not registered
+- Theme Validation Rest Endpoint
+
+1.1
+- Updated Pharmacare Core to 1.0.1
+- Updated Pharmacare Membership to 1.0.1
+- Included Membership plugin as required
+- Minor styling adjustments

@@ -1,0 +1,23 @@
+.qodef-tabs.qodef-layout--simple {
+
+    @include qodefScreenSize680 {
+
+        &.qodef-orientation--vertical {
+            display: block;
+
+            .qodef-tabs-navigation {
+                padding-right: 0;
+                margin-right: 0;
+                border-right: 0;
+            }
+
+            .qodef-tabs-content {
+                margin-top: 37px;
+            }
+        }
+
+        .qodef-tabs-content {
+            margin: 37px 0 0;
+        }
+    }
+}

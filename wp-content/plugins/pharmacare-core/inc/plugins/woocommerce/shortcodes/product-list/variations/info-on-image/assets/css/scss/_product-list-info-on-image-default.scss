@@ -1,0 +1,138 @@
+/* ==========================================================================
+   Product List Info on Image styles
+   ========================================================================== */
+
+.qodef-woo-product-list {
+	
+	&.qodef-item-layout--info-on-image {
+		
+		.qodef-woo-product-inner {
+
+			.qodef-woo-product-image-inner {
+				justify-content: flex-start;
+			}
+			
+			.qodef-woo-yith-buttons-inner {
+				margin-top: 13px!important;
+				
+				.button {
+					
+					&.yith-wcqv-button {
+						display: inline-block!important;
+						width: 18px!important;
+						visibility: hidden;
+						height: 26px;
+						
+						&:hover {
+							color: #777;
+						}
+						
+						&:before {
+							visibility: visible;
+						}
+					}
+				}
+				
+				.yith-wcwl-add-to-wishlist{
+					
+					.yith-wcwl-wishlistexistsbrowse, .yith-wcwl-add-button  {
+						height: 26px;
+						
+						> a {
+							display: inline-block!important;
+							width: 18px!important;
+							visibility: hidden;
+							height: 26px!important;
+							
+							&:before {
+								visibility: visible;
+							}
+						}
+					}
+					
+					.yith-wcwl-add-button {
+						
+						>a {
+							.yith-wcwl-icon {
+								&.fa {
+									&.fa-heart-o {
+										&:before {
+											height: 18px;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			
+			.qodef-woo-product-title {
+				text-align: center;
+				margin-top: 6px!important;
+				min-height: 22px;
+				padding: 0 2px;
+			}
+
+			.qodef-woo-product-image {
+
+				img {
+					opacity: 1;
+					transition: opacity .3s ease-in-out;
+					will-change: opacity;
+				}
+			}
+			
+			.added_to_cart,
+			.add_to_cart_button,
+			.button:not(.add_to_wishlist):not(.yith-wcqv-button) {
+				margin-top: 66px !important; // to override default list selector with id
+				opacity: 0;
+				transform: translateY(15px);
+				will-change: transform;
+				transition: transform .3s ease, opacity .2s ease-out, background-color .3s ease-in-out, color .3s ease-in-out, border-color .3s ease-in-out;
+
+				@include qodefScreenSize768 {
+					margin-top: 94px!important; // to override default list selector with id
+				}
+
+				&.yith-wcqv-button {
+					margin-top: 0!important;
+				}
+			}
+
+			&:hover {
+
+				.qodef-woo-product-image {
+
+					img {
+						opacity: 0.25;
+					}
+				}
+
+				.added_to_cart,
+				.add_to_cart_button,
+				.button:not(.add_to_wishlist):not(.yith-wcqv-button) {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+		}
+
+		&.qodef-swiper-container {
+
+			.yith-wcwl-add-to-wishlist .yith-wcwl-wishlistaddedbrowse {
+
+				a {
+					visibility: hidden;
+					max-width: 18px;
+					max-height: 14px;
+
+					&:before {
+						visibility: visible;
+					}
+				}
+			}
+		}
+	}
+}

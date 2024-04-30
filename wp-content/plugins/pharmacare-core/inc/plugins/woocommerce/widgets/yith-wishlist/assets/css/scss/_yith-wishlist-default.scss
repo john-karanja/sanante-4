@@ -1,0 +1,104 @@
+/* ==========================================================================
+   Yith Wishlist Widget styles
+   ========================================================================== */
+
+.widget_pharmacare_core_yith_wishlist {
+
+    .qodef-wishlist-widget-holder {
+
+        .qodef-wishlist-inner {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+
+            .qodef-wishlist-widget-link {
+                display: flex;
+                align-items: center;
+                font-size: 0;
+                line-height: 1;
+
+                .qodef-wishlist-text-holder {
+                    font-size: 15px;
+                    margin-left: 17px;
+
+                    > span {
+                        display: block;
+
+                        &.qodef-wishlist-title {
+                            @include qodefHeadingStyle(h5 true);
+                            font-size: 18px;
+                            font-weight: 500;
+                            margin-bottom: 8px;
+                        }
+
+                        &.qodef-wishlist-subtitle {}
+                    }
+                }
+
+                .qodef-wishlist-icon-count-holder {
+                    position: relative;
+                    display: inline-block;
+                    color: $second-color;
+                }
+
+                .qodef-wishlist-widget-icon,
+                .qodef-wishlist-count {
+                    display: inline-block;
+                    font-size: 10px;
+                    vertical-align: middle;
+                }
+
+                .qodef-wishlist-count {
+                    font-size: 15px;
+                    line-height: 20px;
+                    width: 24px;
+                    height: 24px;
+                    text-align: center;
+                    background-color: $additional-background-color;
+                    border: 2px solid #fff;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: -8px;
+                    right: -6px;
+                }
+
+                .qodef-wishlist-widget-icon {
+                    margin-right: 3px;
+                    margin-bottom: 2px;
+
+                    &:before {
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin-right: 0;
+                        font-family: "Kiko";
+                        content: "\f171";
+                        font-size: 40px;
+                        line-height: 1;
+                        font-weight: 300;
+                        color: $main-color;
+                    }
+                }
+
+                /* ajax count update message */
+                .qodef-wishlist-count {
+                    font-weight: 600;
+
+                    .blockUI {
+                        display: none !important;
+                    }
+                }
+
+                //&:hover {
+                //
+                //    .qodef-wishlist-widget-icon {
+                //
+                //        &:before {
+                //            font-weight: 600;
+                //        }
+                //    }
+                //}
+            }
+        }
+    }
+}

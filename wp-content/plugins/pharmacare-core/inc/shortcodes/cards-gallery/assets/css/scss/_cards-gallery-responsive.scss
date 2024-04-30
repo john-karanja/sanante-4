@@ -1,0 +1,154 @@
+/* ==========================================================================
+   Cards Gallery shortcode responsive style - begin
+   ========================================================================== */
+
+@include qodefScreenSize768 {
+	
+	.qodef-cards-gallery {
+		
+		.qodef-m-fake-card {
+			transform: scale(.86);
+		}
+		
+		&.qodef-orientation--left .qodef-m-card {
+			transform: scale(.86);
+			
+			&.qodef-out {
+				transform: translateX(-100%);
+			}
+			
+			&:nth-last-child(6) {
+				transform: scale(.36) translateX(84%);
+			}
+			
+			&:nth-last-child(5) {
+				transform: scale(.46) translateX(60%);
+			}
+			
+			&:nth-last-child(4) {
+				transform: scale(.56) translateX(39%);
+			}
+			
+			&:nth-last-child(3) {
+				transform: scale(.66) translateX(25%);
+			}
+			
+			&:nth-last-child(2) {
+				transform: scale(.76) translateX(11.2%);
+			}
+		}
+		
+		&.qodef-orientation--right .qodef-m-card {
+			transform: scale(.86);
+			
+			&.qodef-out {
+				transform: translateX(100%);
+			}
+			
+			&:nth-last-child(6) {
+				transform: scale(.36) translateX(-84%);
+			}
+			
+			&:nth-last-child(5) {
+				transform: scale(.46) translateX(-60%);
+			}
+			
+			&:nth-last-child(4) {
+				transform: scale(.56) translateX(-39%);
+			}
+			
+			&:nth-last-child(3) {
+				transform: scale(.66) translateX(-25%);
+			}
+			
+			&:nth-last-child(2) {
+				transform: scale(.76) translateX(-11.2%);
+			}
+		}
+	}
+}
+
+@include qodefScreenSize680 {
+
+	.qodef-cards-gallery {
+
+		.qodef-m-fake-card {
+			transform: scale(.9);
+		}
+
+		&.qodef-orientation--left .qodef-m-card {
+			transform: scale(.9);
+
+			&.qodef-out {
+				transform: translateX(-100%);
+			}
+
+			&:nth-last-child(6) {
+				transform: scale(.4) translateX(84%);
+			}
+
+			&:nth-last-child(5) {
+				transform: scale(.5) translateX(60%);
+			}
+
+			&:nth-last-child(4) {
+				transform: scale(.6) translateX(39%);
+			}
+
+			&:nth-last-child(3) {
+				transform: scale(.7) translateX(25%);
+			}
+
+			&:nth-last-child(2) {
+				transform: scale(.8) translateX(11.2%);
+			}
+		}
+
+		&.qodef-orientation--right .qodef-m-card {
+			transform: scale(.9);
+
+			&.qodef-out {
+				transform: translateX(100%);
+			}
+
+			&:nth-last-child(6) {
+				transform: scale(.4) translateX(-84%);
+			}
+
+			&:nth-last-child(5) {
+				transform: scale(.5) translateX(-60%);
+			}
+
+			&:nth-last-child(4) {
+				transform: scale(.6) translateX(-39%);
+			}
+
+			&:nth-last-child(3) {
+				transform: scale(.7) translateX(-25%);
+			}
+
+			&:nth-last-child(2) {
+				transform: scale(.8) translateX(-11.2%);
+			}
+		}
+	}
+}
+
+/* custom css class */
+.qodef-cards-gallery {
+
+	&.qodef-1024px-adj {
+
+		@media screen and (min-width: 769px) and (max-width: 1024px) {
+			right: -57px;
+		}
+
+		@include qodefScreenSize680 {
+			right: -12px;
+		}
+	}
+}
+
+/* ==========================================================================
+   Cards Gallery shortcode responsive style - end
+   ========================================================================== */

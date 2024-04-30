@@ -1,0 +1,62 @@
+.qodef-banner {
+	
+	&.qodef-layout--link-button {
+		
+		.qodef-m-content-inner {
+			align-items: flex-start;
+			flex-direction: column;
+			justify-content: center;
+			padding: 34px 32px;
+
+			@include qodefScreenSize1280 {
+				padding: 0 32px;
+			}
+		}
+		
+		.qodef-m-title {
+			margin: 10px 0 6px;
+
+			@include qodefScreenSize1280 {
+				margin: 0 0 6px;
+			}
+		}
+		
+		.qodef-m-text {
+			margin: 0;
+		}
+		
+		.qodef-m-button {
+			margin: 6px 0 0;
+			
+			.qodef-button {
+				font-weight: 700;
+				letter-spacing: 0.1em;
+				line-height: 18px;
+
+				&.qodef-layout--textual {
+
+					&:after {
+						content: "\f102";
+						font-weight: 700;
+						font-family: Kiko;
+						display: inline-block;
+						margin-left: 9px;
+						position: absolute;
+						font-size: inherit;
+						top: 50%;
+						transform: translateX(0) translateY(-50%);
+						transition: transform .3s cubic-bezier(0.6, 0.24, 0.26, 0.96);
+						will-change: transform;
+					}
+
+					&:hover {
+
+						&:after {
+							transform: translateX(3px) translateY(-50%);
+						}
+					}
+				}
+			}
+		}
+	}
+}

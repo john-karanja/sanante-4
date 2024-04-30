@@ -1,0 +1,215 @@
+/* ==========================================================================
+Testimonials carousel vertical style - begin
+========================================================================== */
+
+.qodef-testimonials-list {
+	
+	&.qodef-layout--carousel-vertical {
+
+		&.qodef-swiper-carousel-vertical { // this is the same css style as default swiper-container have
+			position: relative;
+			margin: 0 auto;
+			padding: 0;
+			list-style: none;
+			z-index: 1;
+			visibility: hidden;
+			overflow: hidden;
+			height: 100vh;
+			opacity: 0;
+			transition: opacity .5s ease;
+
+			&.qodef-swiper--initialized,
+			&.swiper-container-initialized {
+				visibility: visible;
+				opacity: 1;
+			}
+
+			.swiper-wrapper {
+				flex-direction: column;
+			}
+
+			.swiper-container {
+				width: 100%;
+				height: 100%;
+			}
+
+			.swiper-slide {
+
+				a {
+					display: block;
+				}
+
+				img {
+					width: 100%;
+				}
+			}
+		}
+		
+		.qodef-e-content {
+			background: #fff;
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+
+			@include qodefScreenSize680 {
+				display: flex !important;
+				height: auto;
+			}
+
+			.qodef-e-author {
+				margin-top: auto;
+			}
+		}
+
+		&.swiper-container-vertical {
+			
+			.swiper-pagination-bullets {
+				bottom: auto!important;
+				top: 50%!important;
+				transform: translateY(-50%);
+			}
+			
+			.swiper-pagination {
+				
+				.swiper-pagination-bullet {
+					width: 10px;
+					margin: 12px 0;
+					
+					&:after {
+						width: 10px;
+						height: 10px;
+						-webkit-border-radius: 50%;
+						-moz-border-radius: 50%;
+						border-radius: 50%;
+						background: #fff;
+						top: 0;
+					}
+
+					&.swiper-pagination-bullet-active {
+						&:after {
+							opacity: 0.25;
+						}
+					}
+				}
+			}
+
+			.swiper-slide {
+				height: 154px; // item default height - item height + spacing between (122+32) calculated with jquery
+				
+				&.qodef-testimonials-background .qodef-testimonial-text-holder{
+					.qodef-testimonial-text-wrapper {
+						background-color: $main-color;
+
+						.qodef-testimonial-author,
+						.qodef-testimonials-author-job {
+							color: #fff;
+						}
+
+						.qodef-testimonial-text {
+							color: #b8d8c2;
+							font-family: $heading-font;
+						}
+					}
+				}
+
+				.qodef-e-inner {
+					max-width: 87%;
+					height: calc(100% - 42px); // reduced for bottom margin
+
+					@include qodefScreenSize680 {
+						height: 100%;
+					}
+
+					@include qodefScreenSize768 {
+
+						.qodef-e-media-image {
+							display: none;
+						}
+					}
+				}
+				
+				.qodef-testimonial-image {
+					position: relative;
+					top: 43px;
+					transform: translateY(-50%);
+					display: block;
+					width: 72px;
+					height: 72px;
+					float: left;
+
+					img {
+						display: block;
+						border-radius: 50%;
+					}
+				}
+
+				.qodef-testimonial-text-holder {
+					padding-left: 94px;
+
+
+					.qodef-testimonial-text-wrapper {
+						position: relative;
+						color: #fff;
+						background-color: #fff;
+						padding: 27px 70px 22px 35px;
+						box-sizing: border-box;
+						box-shadow: -4px 7px 20px 0px rgba(130, 85, 50, 0.04);
+
+
+						&:after {
+							content: "\7b";
+							display: block;
+							position: absolute;
+							right: -1px;
+							top: 24px;
+							color: rgba(236,231,210, .3);
+							font-size: 88px;
+							font-family: "eleganticons";
+						}
+
+						.qodef-testimonial-author {
+							margin: 8px 0;
+						}
+
+						.qodef-testimonial-text {
+							position: relative;
+							z-index: 50;
+							margin: 0;
+							color: #b1b1b1;
+							font-family: $heading-font;
+							font-style: italic;
+							font-size: 16px;
+						}
+
+						.qodef-testimonials-author-job {
+							font-size: 14px;
+							margin: 12px 0 0 0;
+							display: block;
+							color: $main-color;
+						}
+					}
+
+					.qodef-testimonial-quote {
+						position: absolute;
+						right: 0;
+						top: -9px;
+						font-size: 88px;
+						color: #f3f3f4;
+						z-index: 5;
+					}
+				}
+				
+				img {
+					width: auto;
+				}
+			}
+
+				&.qodef-swiper-loaded {
+					opacity: 1;
+				}
+			}
+		/* ==========================================================================
+		   Testimonials carousel vertical style - begin
+		   ========================================================================== */
+	}
+}

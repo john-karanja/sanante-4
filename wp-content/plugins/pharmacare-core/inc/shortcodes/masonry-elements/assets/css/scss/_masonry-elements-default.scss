@@ -1,0 +1,79 @@
+/* ==========================================================================
+   Masonry Elements shortcode style - begin
+   ========================================================================== */
+
+.qodef-masonry-elements {
+
+	body.elementor-editor-active & {
+
+		.qodef-grid-inner {
+			min-height: 500px;
+		}
+	}
+
+	&.qodef-images-overlay--yes {
+
+		.qodef-e-media-image {
+			position: relative;
+
+			&:after {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(#434343, .11);
+			}
+		}
+	}
+
+	.qodef-e-logo-image {
+		position: absolute;
+		display: block;
+		z-index: 50;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	&.qodef-items--fixed {
+
+		.qodef-e-masonry-elements-item-inner {
+			height: 100%;
+			overflow: hidden;
+
+			.qodef-e-media-image {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+	
+	.qodef-e-masonry-elements-item-inner {
+		position: relative;
+		background-color: #fff;
+		
+		.qodef-e-post-link {
+			@include qodefAbsoluteLayout();
+		}
+	}
+
+	&.qodef-appear-animation--enabled,
+	&.qodef-wait-for-spinner--enabled {
+
+		.qodef-e {
+			opacity: 0;
+			transition: .3s ease-in-out;
+
+			&.qodef--appeared,
+			.elementor-editor-active & {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Masonry Elements shortcode style - end
+   ========================================================================== */

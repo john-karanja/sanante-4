@@ -1,0 +1,554 @@
+/* ==========================================================================
+   Header layout styles
+   ========================================================================== */
+
+$left-right-spacing: 12px;
+
+.qodef-header--standard {
+	
+	#qodef-page-header {
+		height: 185px;
+		border-top: 1px solid $border-color ;
+	}
+	
+	#qodef-page-header-inner {
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 0;
+	}
+	
+	.qodef-standard-header-top-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 40px;
+		height: 100%;
+		
+		&.qodef-content-grid {
+			padding: 0;
+		}
+		
+		&:not(.qodef-content-grid) {
+			width: 100%;
+		}
+
+		.qodef-widget-holder {
+
+			.widget_search {
+				min-width: 350px;
+
+				@include qodefScreenSize1440 {
+					min-width: 240px;
+				}
+
+				@media only screen and (max-width: 1194px) {
+					min-width: 160px;
+					max-width: 160px;
+				}
+			}
+		}
+	}
+	
+	.qodef-standard-header-bottom-wrapper{
+		background: #54B848;
+		display: inline-block;
+		width: 100%;
+	}
+	
+	.qodef-standard-header-bottom-inner {
+		height: 60px;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		padding: 0 40px;
+		
+		&.qodef-content-grid {
+			padding: 0;
+		}
+
+		> .qodef-widget-holder {
+			margin-left: auto !important;
+		}
+	}
+
+	//Extended Dropdown
+	.qodef-extended-dropdown-menu {
+		display: flex;
+		position: relative;
+		z-index: 1;
+		width: auto;
+		height: 100%;
+		align-items: center;
+		background-color: $second-color;
+		padding-left: 27px;
+		padding-right: 73px;
+		margin-right: 44px;
+		cursor: pointer;
+
+		.yith-wcwl-add-to-wishlist {
+
+			.yith-wcwl-wishlistexistsbrowse, .yith-wcwl-wishlistaddedbrowse {
+
+				a {
+					font-size: 9px !important;
+					color: #777 !important;
+				}
+			}
+		}
+
+		.qodef-extended-dropdown-opener {
+			display: flex;
+			align-items: center;
+			@include qodefHeadingStyle(h5);
+			font-size: 20px;
+			color: #fff;
+			position: relative;
+			padding-left: 51px;
+
+			.qodef-e-icon {
+				font-size: 20px;
+				font-weight: 700;
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+
+				&.qodef-e-opener {
+					font-weight: 400;
+					opacity: 1;
+					transition: opacity .2s ease-in-out .12s;
+				}
+
+				&.qodef-e-opened {
+					opacity: 0;
+					transition: opacity .2s ease-in-out;
+				}
+			}
+		}
+
+		&.qodef-dropdown-always-opened {
+			cursor: initial;
+
+			.qodef-extended-dropdown-opener {
+
+				.qodef-e-icon {
+
+					&.qodef-e-opener {
+						opacity: 0;
+					}
+
+					&.qodef-e-opened {
+						opacity: 1;
+					}
+				}
+			}
+		}
+
+		&.qodef-dropdown-hovered {
+
+			.qodef-extended-dropdown-opener {
+
+				.qodef-e-icon {
+
+					&.qodef-e-opener {
+						opacity: 0;
+						transition: opacity .2s ease-in-out;
+					}
+
+					&.qodef-e-opened {
+						opacity: 1;
+						transition: opacity .2s ease-in-out .12s;
+					}
+				}
+			}
+		}
+
+		.qodef-extended-dropdown {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			width: 100%;
+			background-color: #fff;
+			border: 1px solid $border-color;
+			padding: 8px 0;
+
+			@-moz-document url-prefix() {
+				padding: 8px 0 7px;
+			}
+
+			//, & > li:not(.qodef-menu-item--wide) li
+			& > li {
+				list-style-type: none;
+				padding: 10px 0;
+				margin: 2px 9px;
+				transition: background .3s ease-in-out;
+
+				&:hover {
+					background: $additional-background-color;
+					
+					> div > a {
+						color: $second-color;
+
+						> span {
+							color: $second-color;
+						}
+					}
+				}
+				
+				&.item-with-icon > div > a .item_outer {
+					padding-left: 25px;
+				}
+
+				> div > a {
+					padding: 0 23px;
+					width: calc(100% + 9px);
+					display: flex;
+					align-items: center;
+					box-sizing: border-box;
+					text-transform: capitalize;
+					@include qodefHeadingStyle(h6, true);
+					transition: color .3s ease-in-out;
+					
+					.qodef-icon-pharmacy-icons {
+						font-size: 30px;
+						margin-right: 27px;
+						color: #777;
+						transition: color .3s ease-in-out;
+					}
+
+					.item_outer {
+						padding-right: 20px;
+						display: block;
+						position: relative;
+					}
+
+					.menu_arrow_wrapper {
+						position: absolute;
+						top: 50%;
+						right: 0;
+						transform: translateY(-50%);
+					}
+				}
+
+				&:hover > .qodef-drop-down-second {
+					opacity: 1;
+					visibility: visible;
+					left: 100% !important;
+					transition: opacity .2s ease-in-out, visibility .2s ease-in-out;
+				}
+				
+				.qodef-drop-down-second {
+					width: 980px;
+					padding-left: 43px;
+					padding-top: 26px;
+					background: #fff;
+					
+					@include qodefScreenSize1440 {
+						width: 823px;
+					}
+					
+					@include qodefScreenSize1366 {
+						width: 824px;
+					}
+
+					@media only screen and (max-width: 1194px) {
+						width: 758px;
+					}
+					
+					.qodef-drop-down-second-inner {
+					> .sub-menu {
+						
+						> li {
+							width: 25%;
+							float: left;
+							padding-bottom: 37px;
+							
+							.menu-link-holder {
+								
+								a {
+									font-family: $text-font;
+									letter-spacing: 0;
+									font-size: 16px;
+									font-weight: 500;
+									color: #2c2c2c;
+									line-height: 21px;
+								}
+							}
+							
+							.sub-menu {
+								
+								.menu-link-holder {
+									
+									> a {
+										@include qodefMenuLevelTwoInitialStyle();
+										@include qodefMenuLevelTwoInitialTypographyStyle(#777);
+										line-height: 37px;
+										margin: 0;
+									}
+
+									&:hover,
+									&.current-menu-ancestor,
+									&.current-menu-item {
+
+										> a {
+											@include qodefMenuLevelTwoHoverStyle();
+											color: #434343;
+										}
+									}
+								}
+							}
+							
+							> .menu-link-holder {
+								padding-bottom: 8px;
+
+								@-moz-document url-prefix() {
+									padding-bottom: 7px;
+								}
+							}
+						}
+					}
+					
+				}
+				}
+			}
+
+			& > li {
+				position: initial;
+
+				.menu-link-holder {
+					position: relative;
+
+                    svg {
+						display: none;
+					}
+				}
+
+				> .qodef-drop-down-second {
+					position: absolute;
+					top: -1px;
+					left: 100%;
+					opacity: 0;
+					visibility: hidden;
+					border: 1px solid $border-color;
+					background-size: contain;
+					background-position: right bottom;
+					background-repeat: no-repeat;
+					transition: opacity .2s ease-in-out .12s, visibility .2s ease-in-out .12s;
+				}
+
+				&.menu-item-has-children {
+					> .menu-link-holder {
+						&:after {
+							font-family: 'Kiko';
+							content: '\f102';
+							font-size: 12px;
+							font-style: normal;
+							position: absolute;
+							top: 50%;
+							right: 20px;
+							line-height: 1;
+							transform: translateY(-50%);
+							color: $main-color!important;
+						}
+
+						&:hover:after {
+							color: $heading-color;
+						}
+					}
+				}
+
+				ul {
+					margin: 0;
+					padding: 0;
+				}
+
+				.qodef-mega-menu-widget-holder {
+					a.qodef-button.qodef-layout--textual {
+						color: $heading-color;
+					}
+				}
+
+				&:not(.qodef-menu-item--wide) {
+					> .sub-menu {
+						top: -14px;
+						width: 100%;
+						padding: 17px 0;
+						transition: opacity .2s ease-in-out, visibility .1s ease-in-out;
+					}
+				}
+
+				&.qodef-menu-item--wide {
+
+					.qodef-drop-down-second-inner {
+
+						> .sub-menu {
+							min-height: calc(100% - 40px);
+							left: 100%;
+							width: 520px;
+							box-shadow: 7px 7px 9px rgba(87,98,101,.06);
+							display: flex;
+							flex-wrap: wrap;
+
+							> li {
+								width: 230px;
+								padding: 0 0 29px;
+								box-sizing: border-box;
+
+								> div > a {
+									display: inline-block;
+									//@include qodefHeadingStyle(h6);
+									font-weight: 600;
+									font-size: 11px;
+									letter-spacing: .17em;
+									margin-bottom: 0;
+									color: $heading-color;
+								}
+
+								li {
+									//padding: 3px 0;
+
+									> div > a {
+										position: relative;
+										display: inline-block;
+										font-size: 16px;
+										font-weight: 400;
+										//font-style: italic;
+
+										.item_outer .item_text {
+											position: relative;
+											display: inline-block;
+										}
+
+										&.no_link {
+											cursor: default;
+
+											&:hover {
+												color: $heading-color;
+											}
+										}
+
+										//&:after {
+										//	content: '';
+										//	position: absolute;
+										//	left: 0;
+										//	bottom: 3px;
+										//	width: 100%;
+										//	height: 1px;
+										//	display: block;
+										//	background: currentColor;
+										//	transform: scaleX(0);
+										//	transform-origin: right;
+										//	transition: transform .4s;
+										//}
+
+										&:hover {
+											color: #000;
+											//&:after {
+											//	transform-origin: left;
+											//	transform: scaleX(1);
+											//}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity .3s ease 0s, visibility 0s linear .3s;
+
+			.qodef-menu-item--wide {
+
+				&.qodef-wide-5-col {
+
+					.qodef-drop-down-second-inner {
+
+						.sub-menu {
+							width: 100%;
+
+							li {
+								width: 20%;
+
+								.sub-menu {
+
+									li {
+										width: 100%;
+									}
+								}
+							}
+						}
+					}
+
+					&.qodef-wide-last-col {
+
+						.qodef-drop-down-second-inner {
+
+							> .sub-menu {
+
+								li {
+									width: 25%;
+
+									&:last-child {
+										width: 100%;
+										padding-bottom: 0;
+									}
+								}
+
+								> li {
+
+									&:last-child {
+										@-moz-document url-prefix() {
+											padding-bottom: 1px;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&:hover > ul {
+			opacity: 1;
+			visibility: visible;
+			transition: opacity .3s ease, visibility 0s;
+		}
+
+		&.qodef-dropdown-always-opened > ul {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		& > ul li {
+			list-style-type: none;
+		}
+	}
+
+	//Extended Dropdown on fixed header
+
+	.fixed {
+
+		.qodef-extended-dropdown-menu.qodef-dropdown-always-opened {
+
+			> ul {
+				opacity: 0;
+				visibility: hidden;
+				transition: opacity .3s ease 0s, visibility 0s linear .3s;
+			}
+
+			&:hover {
+				cursor: pointer;
+
+				> ul {
+					opacity: 1;
+					visibility: visible;
+					transition: opacity 3s ease, visibility 0s;
+				}
+			}
+		}
+	}
+}

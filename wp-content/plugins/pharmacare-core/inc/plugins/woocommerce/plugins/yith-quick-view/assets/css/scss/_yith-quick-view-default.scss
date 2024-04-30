@@ -1,0 +1,679 @@
+#yith-quick-view-modal {
+
+    .yith-wcqv-wrapper {
+        max-height: 550px !important;
+        max-width: 865px !important;
+
+        .yith-wcqv-main {
+            box-shadow: $box-shadow;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    }
+
+    .yith-quick-view-overlay {
+        background: rgba( #fff, 0.88) !important;
+    }
+	
+    .qodef-social-share {
+        display: none;
+    }
+    
+	.qodef-woo-product-mark {
+		position: relative;
+		top: 22px;
+		padding: 0 22px 0 0;
+		font-size: 16px;
+		font-weight: 500;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		line-height: 1.188em;
+		color: $main-color;
+		background-color: transparent;
+		z-index: 5;
+		
+		&.qodef-precent {
+            display: inline-block;
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			border-radius: 50%;
+			padding: 0;
+			font-size: 18px;
+			letter-spacing: 0;
+			text-align: center;
+			background-color: $additional-background-color;
+		}
+	}
+    
+    .price {
+        font-family: $text-font;
+        letter-spacing: 0;
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 1.269em;
+        margin: 14px 0 -9px;
+        color: #43bdde;
+        
+        del {
+            font-size: 14px;
+            line-height: 17px;
+            color: #777;
+            font-weight: 400;
+        }
+    }
+	
+    #yith-quick-view-close {
+        width: 33px;
+        height: 33px;
+        border-radius: 50%;
+        background: $main-color;
+        font-size: 0;
+        top: 15px;
+        right: 16px;
+        opacity: 1;
+        border: 0;
+
+        &:after {
+            content: "\f252";
+            font-family: 'Kiko';
+            //speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 17px;
+            color: #fff;
+            top: 8px;
+            position: relative;
+        }
+    }
+
+    #yith-quick-view-content {
+
+        .product {
+            height: 100%;
+            display: flex;
+        }
+    
+        .qodef-woo-product-mark {
+            display: none;
+        }
+        
+        .woocommerce-product-rating {
+            margin-bottom: 5px;
+        
+            .qodef-woo-ratings {
+                flex-shrink: 0;
+                width: auto;
+                margin-right: 18px;
+            }
+        
+            .woocommerce-review-link {
+                color: #9d9d9d;
+            
+                &:hover {
+                    color: $heading-color;
+                }
+            }
+            
+            .qodef-m-inner {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+            }
+    
+            .qodef-m-star {
+                color: #fcde89;
+                
+                svg {
+                    display: inline-block;
+                    margin-right: 2px;
+                    width: 19px;
+                    height: auto;
+                    fill: none;
+                    stroke: currentColor;
+                    stroke-width: 3px;
+                }
+                
+                &.qodef--active {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    
+                    svg {
+                        fill: currentColor;
+                    }
+                }
+            }
+            
+        }
+        
+        .product_meta,
+        //.woocommerce-product-rating,
+        .qodef-woo-thumbnails-wrapper {
+            display: none;
+        }
+
+        /* images start */
+        div.images {
+            width: 47.77%;
+            height: 100%;
+            padding: 26px 25px;
+
+            @include qodefScreenSize680 {
+                display: none;
+            }
+
+            .woocommerce-product-gallery__wrapper {
+                height: 100%;
+                overflow: hidden;
+
+                * {
+                    height: 100%;
+                    overflow: hidden;
+                }
+
+                a {
+                    display: block;
+                    pointer-events: none;
+                }
+
+                img {
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+        }
+        /* images end */
+
+        div.summary {
+            width: 52.23%;
+            padding: 21px 15px 15px 0;
+            align-self: center;
+
+            @include qodefScreenSize680 {
+                width: 100%;
+                padding: 26px 15px;
+            }
+        }
+
+        /* title */
+        .entry-summary {
+
+            .product_title.entry-title {
+                @include qodefHeadingStyle(h4);
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+
+        .woocommerce-product-details__short-description {
+            margin: 33px 0 51px;
+            font-size: 18px;
+        }
+
+        form.cart {
+            display: flex;
+            align-items: flex-start;
+            position: relative;
+            width: 100%;
+            vertical-align: top;
+            margin-bottom: 0;
+    
+            .qodef-quantity-label {
+                height: 55px;
+                line-height: 55px;
+                border: 1px solid rgba(173, 173, 173, 0.7);
+                border-right: 0;
+                padding: 0 0 0 20px;
+                min-width: 146px;
+                display: inline-block;
+                margin-right: 0;
+                
+                @include qodefScreenSize680 {
+                    display: none;
+                }
+            }
+            
+            .button {
+                @include qodefButtonDefaultStyle();
+                @include qodefButtonSize(medium);
+                cursor: pointer;
+                z-index: 3;
+                top: -1px;
+                @include qodefScreenSize768 {
+                    top: 12px;
+                }
+                @include qodefScreenSize680 {
+                    top: 0;
+                }
+                @include qodefButtonFilledColor();
+
+                &:before {
+                    content: "\f223";
+                    font-family: Kiko;
+                    font-weight: 300;
+                    font-size: 15px;
+                    line-height: 0;
+                    position: relative;
+                    top: 2px;
+                    right: 3px;
+                    margin-left: 2px;
+                    display: inline-block;
+                }
+                
+                &:hover {
+                    @include qodefButtonFilledHoverColor();
+                }
+            }
+
+            @include qodefRelativeLayout();
+            margin-top: 9px;
+
+            &:not(.variations_form),
+            .variations_button {
+                display: block;
+
+                @include qodefScreenSize680 {
+                    min-width: 160px;
+
+                    .button {
+                        padding: 19px;
+                    }
+                }
+
+                .quantity {
+                    margin-right: 5px;
+                    position: relative;
+                    display: inline-block;
+                    vertical-align: inherit;
+                    white-space: nowrap;
+                    left: -5px;
+    
+                    .qodef-quantity-plus {
+                        position: absolute;
+                        right: 0;
+                        width: 30px;
+                        height: 28px;
+                        line-height: 23px;
+                        cursor: pointer;
+                        transition: color .2s ease-out;
+                        background-color: #f8f8f8;
+                        top: 0;
+                        display: inline-block;
+                        vertical-align: middle;
+                        font-size: 15px;
+                        font-family: inherit;
+                        font-weight: 400;
+                        text-align: center;
+                        -webkit-user-select: none;
+                        -ms-user-select: none;
+                        user-select: none;
+                        color: #777;
+                        border: 1px solid rgba(173, 173, 173, 0.7);
+                        border-left: 0;
+                        border-bottom: 0;
+                    }
+                    
+                    .qodef-quantity-input {
+                        position: relative;
+                        height: 55px;
+                        width: 45px;
+                        padding: 0;
+                        margin: 0 30px 0 0;
+                        font-family: inherit;
+                        line-height: 55px;
+                        outline: 0;
+                        border-right: 0;
+                        border-left: 0;
+
+                        @include qodefScreenSize680 {
+                            border-left: 1px solid rgba(173,173,173,.7);
+                        }
+                    }
+                    
+                    .qodef-quantity-minus {
+                        bottom: 0;
+                        display: inline-block;
+                        vertical-align: middle;
+                        font-size: 15px;
+                        font-family: inherit;
+                        font-weight: 400;
+                        text-align: center;
+                        -webkit-user-select: none;
+                        -ms-user-select: none;
+                        user-select: none;
+                        color: #777;
+                        border: 1px solid rgba(173, 173, 173, 0.7);
+                        position: absolute;
+                        right: 0;
+                        width: 30px;
+                        height: 28px;
+                        line-height: 23px;
+                        border-left: 0;
+                        cursor: pointer;
+                        transition: color .2s ease-out;
+                        background-color: #f8f8f8;
+                        border-top: 0;
+                        border-left: 0;
+                    }
+                }
+            }
+
+            &.variations_form {
+                margin-top: 41px;
+            }
+
+            &.grouped_form {
+                flex-wrap: wrap;
+
+                .group_table {
+
+                    .qodef-quantity-label {
+                        display: none;
+                    }
+
+                    th, td {
+                        padding: 20px 0;
+                        vertical-align: middle;
+                        text-align: left;
+                    }
+
+                    label {
+                        margin-bottom: 0;
+                        @include qodefHeadingStyle(h6, true);
+                    }
+                }
+
+                > .button {
+                    margin-top: 30px;
+                }
+            }
+
+            .group_table {
+                //@include qodefWooTableStyle();
+                tr {
+                    border-left: none;
+                    border-right: none;
+                    border-top: none;
+                }
+
+                th, td {
+                    padding: 20px 27px;
+                    vertical-align: middle;
+                    text-align: left;
+                    border: 0;
+
+                    &:first-child {
+                        padding-left: 0;
+                    }
+                }
+
+                th {
+                    @include qodefHeadingStyle(h6, true);
+                }
+
+                td {
+
+                    ul {
+                        list-style: none;
+                        margin: 0;
+                        padding: 0;
+
+                        li {
+                            margin: 0 0 10px;
+                            padding: 0;
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+
+                            label {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+
+                p {
+                    margin: 0;
+                }
+            }
+
+            .variations {
+                margin-bottom: 0;
+
+                tbody {
+                    display: flex;
+                    flex-direction: revert;
+                    flex-wrap: wrap;
+                }
+
+                tr {
+                    border: 0;
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 24px;
+
+                    &:nth-child(2n+1) {
+                        margin-right: 43px;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 32px;
+                    }
+                }
+
+                td, th {
+                    padding: 0;
+                    text-align: initial;
+                    vertical-align: middle;
+                    border: 0;
+                }
+
+                td {
+                    &.value {
+                        position: relative;
+                    }
+                }
+
+                label {
+                    margin-bottom: 0;
+                }
+
+                select {
+                    //@include qodefWooSelect2Style();
+                    width: auto;
+                    min-width: 220px;
+                    margin: 0;
+                }
+
+                .select2-container--default {
+                    margin: 0;
+                }
+
+                .reset_variations {
+                    position: absolute;
+                    left: 100%;
+                    top: 0;
+                    display: inline-block;
+                    vertical-align: top;
+                    margin: 9px 0 0 15px;
+                }
+            }
+
+            .single_variation {
+                position: relative;
+                display: flex;
+                align-items: flex-start;
+                margin-bottom: 30px;
+                flex-direction: column;
+
+                .price {
+                    margin: 0;
+                }
+            }
+        }
+
+        /* quantity start */
+        .qodef-quantity-label {
+            line-height: 43px;
+            margin-right: 18px;
+        }
+
+        .qodef-quantity-buttons {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+
+            .qodef-quantity-input,
+            .qodef-quantity-minus,
+            .qodef-quantity-plus {
+                display: inline-block;
+                vertical-align: middle;
+                font-family: inherit;
+                text-align: center;
+                user-select: none;
+                font-size: 15px;
+                font-weight: 400;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                color: #777;
+                background-color: #fff;
+                border: 1px solid rgba(173, 173, 173, 0.7);
+            }
+
+            .qodef-quantity-input {
+                position: relative;
+                height: 43px;
+                width: 31px;
+                padding: 0;
+                margin: 0 0 0 30px;
+                font-family: inherit;
+                line-height: 47px;
+                outline: 0;
+
+                &[type=number]::-webkit-inner-spin-button,
+                &[type=number]::-webkit-outer-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
+
+                @include qodefScreenSize680 {
+                    height: 33px;
+                    margin: 0 20px 0 20px;
+                }
+            }
+
+            .qodef-quantity-minus,
+            .qodef-quantity-plus {
+                position: absolute;
+                right: 0;
+                width: 30px;
+                height: 43px;
+                line-height: 46px;
+                border: 0;
+                cursor: pointer;
+                transition: $color-transition;
+                z-index: 50;
+                color: #2e2e2e;
+
+                @include qodefScreenSize680 {
+                    height: 33px;
+                    width: 20px;
+                    line-height: 36px;
+                }
+
+                svg {
+                    width: 13.5px;
+                    height: 27px;
+                }
+
+                &:hover {
+                    color: $main-color;
+                }
+            }
+
+            .qodef-quantity-plus {
+                text-align: left;
+                border: 0;
+            }
+
+            .qodef-quantity-minus {
+                //text-align: right;
+                border: 0;
+                //right: initial;
+                //left: 0;
+    
+                svg {
+                    fill: #adadad;
+                }
+            }
+        }
+        /* quantity end */
+
+        /* add to wishlist start */
+
+        .yith-wcwl-add-to-wishlist {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 1;
+            margin-top: 22px;
+
+            .yith-wcwl-add-button {
+
+                > a {
+
+                    .yith-wcwl-icon {
+                        margin-right: 7px;
+                    }
+
+                    span {
+                        font-size: 11px;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        letter-spacing: 0.2em;
+                    }
+                }
+            }
+        }
+
+        .yith-wcwl-wishlistaddedbrowse,
+        .yith-wcwl-wishlistexistsbrowse {
+
+            > a {
+                position: relative;
+                display: flex;
+                align-items: center;
+                line-height: 1;
+                font-size: 11px;
+                text-transform: uppercase;
+                font-weight: 600;
+                letter-spacing: 0.2em;
+
+                &:before {
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-right: 0;
+                    font-family: Kiko;
+                    content: "\f171";
+                    font-size: 14px;
+                    line-height: 1;
+                    font-weight: 600;
+                    position: relative;
+                    top: -1px;
+                    color: $main-color;
+                }
+            }
+        }
+        /* add to wishlist end */
+    }
+}

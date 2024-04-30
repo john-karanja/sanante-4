@@ -1,0 +1,208 @@
+/* ==========================================================================
+   WooCommerce Product Categories List Simple styles
+   ========================================================================== */
+
+.qodef-woo-product-categories-list-simple {
+
+    &.qodef-border--enabled {
+
+        .qodef-product-categories-holder-inner {
+            border: 1px solid $border-color;
+            padding: 12px 12px 12px 12px;
+        }
+    }
+
+    /* ul parent */
+    .qodef-product-categories-list {
+        list-style-type: none;
+        margin: 0;
+
+        /* li */
+        .qodef-product-category {
+            margin: 0;
+
+            &.qodef--opened {
+
+                > .qodef-cat-link {
+                    background-color: $additional-background-color;
+
+                    .qodef-product-cat-name {
+                        color: $main-color;
+                    }
+
+                    .qodef-cat-opener {
+
+                        .qodef-e-icon {
+                            transform: rotate(-135deg);
+                        }
+                    }
+
+                    &.qodef-image-hover {
+
+                        .qodef-cat-image {
+
+                            img {
+                                opacity: 0;
+
+                                &.qodef-hover-img {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .qodef-cat-link {
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                padding: 10px 15px 10px 11px;
+                background-color: transparent;
+                transition: $background-color-transition;
+
+                &.qodef-image-hover {
+
+                    .qodef-cat-image {
+
+                        img {
+                            opacity: 1;
+                            transition: $opacity-transition;
+
+                            &.qodef-hover-img {
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                opacity: 0;
+                                transition: $opacity-transition;
+                            }
+                        }
+                    }
+
+                    &:hover {
+
+                        .qodef-cat-image {
+
+                            img {
+                                opacity: 0;
+
+                                &.qodef-hover-img {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &:hover {
+                    background-color: $additional-background-color;
+
+                    .qodef-product-cat-name {
+                        color: $main-color;
+                    }
+
+                    .qodef-cat-opener {
+
+                        .qodef-e-icon {
+                            transform: rotate(-135deg);
+                        }
+                    }
+                }
+            }
+
+            .qodef-cat-image {
+                display: block;
+                position: relative;
+                width: 30px;
+                margin-right: 24px;
+
+                img {
+                    display: block;
+                    width: 100%;
+                }
+            }
+
+            .qodef-product-cat-name {
+                @include qodefHeadingStyle(h6, true);
+                transition: $color-transition;
+            }
+
+            .qodef-cat-opener {
+                display: flex;
+                margin-left: auto;
+                color: $main-color;
+                position: absolute;
+                right: 15px;
+                top: initial;
+                z-index: 50;
+
+                .qodef-e-icon {
+                    font-weight: 600;
+                    display: inline-block;
+                    transform: rotate(0deg);
+                    transition: transform $transition-timing;
+                    will-change: transforms;
+                    backface-visibility: hidden;
+                }
+            }
+
+            /* ul childrent */
+            .children {
+                display: none;
+                margin: 0;
+                list-style-type: none;
+
+                li {
+
+                    &:first-child {
+                        margin-top: 6px;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 10px;
+                    }
+                }
+
+                .qodef-product-category {
+
+                    .qodef-cat-image {
+
+                        img {
+                            //margin-left: 3px;
+                            //width: 25px;
+                        }
+                    }
+
+                    .qodef-cat-link {
+                        padding: 9px 15px 9px 10px;
+
+                        .qodef-product-cat-name {
+                            font-size: 15px;
+                            font-weight: 400;
+                            color: $text-color;
+                            transition: $color-transition;
+                        }
+
+                        &:hover {
+                            background-color: transparent;
+
+                            .qodef-product-cat-name {
+                                color: $main-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// widget
+.widget_pharmacare_core_product_categories_list_simple {
+
+    .qodef-widget-title {
+        margin: 0 0 24px !important;
+    }
+}

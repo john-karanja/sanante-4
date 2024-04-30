@@ -1,0 +1,271 @@
+/* ==========================================================================
+   WooCommerce DropDown Cart styles
+   ========================================================================== */
+
+$wp-widgets-area-map: (
+	'#qodef-page-sidebar': (
+		text-color: null,
+		link-color: null,
+		link-hover-color: null
+	),
+	'#qodef-top-area': (
+		text-color: $text-color,
+		link-color: $text-color,
+		link-hover-color: $main-color,
+	)
+);
+
+.widget_pharmacare_core_woo_dropdown_cart {
+	height: 100%;
+	
+	.qodef-cart-icon-count-holder {
+		position: relative;
+		display: inline-block;
+		color: #54B848;
+		top: 6px;
+		
+		.qodef-m-opener-icon {
+			
+			.qodef-icon-fontkiko {
+				font-size: 40px;
+			}
+		}
+		
+		.qodef-m-opener-count {
+			font-size: 15px;
+			line-height: 20px;
+			width: 24px;
+			height: 24px;
+			text-align: center;
+			background-color: #f8f8f8;
+			border: 2px solid #fff;
+			border-radius: 50%;
+			position: absolute;
+			top: -16px;
+			right: -6px;
+			font-weight: 600;
+		}
+	}
+	
+	.qodef-cart-text-holder {
+		font-size: 15px;
+		margin-left: 17px;
+		margin-top: 3px;
+		min-width: 55px;
+		
+		.qodef-cart-title {
+			font-family: $text-font;
+			letter-spacing: 0;
+			color: #2c2c2c;
+			font-size: 18px;
+			font-weight: 500;
+			margin-bottom: 8px;
+		}
+		
+		.qodef-m-order-amount {
+			display: block;
+		}
+	}
+}
+
+.qodef-woo-dropdown-cart {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	height: 100%;
+	padding: 0 10px;
+	
+	.qodef-m-inner {
+		@include qodefRelativeLayout();
+		height: 100%;
+	}
+	
+	.qodef-m-opener {
+		position: relative;
+		display: flex;
+		align-items: center;
+		height: 100%;
+	}
+	
+	.qodef-m-dropdown {
+		position: absolute;
+		top: 100%;
+		left: auto;
+		right: 0;
+		text-align: left;
+		opacity: 0;
+		visibility: hidden;
+		transition: $opacity-transition, visibility $transition-timing;
+		border: 1px solid $border-color;
+	}
+	
+	.qodef-m-dropdown-inner {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		width: 306px;
+		padding: 26px 24px;
+		background-color: #fff;
+
+		.qodef-m-posts-not-found {
+			margin: 0;
+		}
+	}
+	
+	.qodef-woo-dropdown-items {
+		@include qodefRelativeLayout();
+		
+		@each $key, $values in $wp-widgets-area-map {
+			
+			#{$key} & {
+				@if (map-get($values, 'text-color') != null) {
+					color: map-get($values, 'text-color');
+				}
+				
+				@if (map-get($values, 'link-color') != null) {
+					a {
+						color: map-get($values, 'link-color');
+						
+						@if (map-get($values, 'link-hover-color') != null) {
+							&:hover {
+								color: map-get($values, 'link-hover-color');
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	.qodef-woo-dropdown-item {
+		position: relative;
+		display: flex;
+		align-items: flex-start;
+		margin-top: 6px;
+		padding-bottom: 15px;
+		border-bottom: 1px solid $border-color;
+		
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+	
+	.qodef-e-image {
+		flex-shrink: 0;
+		width: 80px;
+		margin-right: 10px;
+		
+		a, img {
+			display: block;
+		}
+	}
+	
+	.qodef-e-content {
+		@include qodefRelativeLayout();
+		padding-right: 20px;
+		
+		.qodef-e-title a {
+			font-size: 16px;
+			font-weight: 500;
+			color: $heading-color;
+			letter-spacing: 0;
+			line-height: 19px;
+			
+			&:hover {
+				color: $heading-color;
+			}
+		}
+	}
+	
+	.qodef-e-title {
+		margin-bottom: 3px;
+		line-height: 15px;
+	}
+	
+	.qodef-e-price, .qodef-e-quantity {
+		margin: 3px 0 0;
+		display: inline;
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 19px;
+		letter-spacing: 0;
+		color: #43bdde;
+	}
+	
+	.qodef-e-remove {
+		position: absolute;
+		top: 14px;
+		right: 0;
+		background-color: $main-color;
+		width: 19px;
+		height: 19px;
+		display: inline-block;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		border-radius: 50%;
+		line-height: 19px;
+		text-align: center;
+		
+		.qodef-icon-fontkiko {
+			font-size: 10px;
+			color: #fff;
+		}
+	}
+	
+	.qodef-m-order-details {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 14px;
+		
+		.qodef-m-order-amount {
+			font-size: 17px;
+			font-weight: 700;
+			line-height: 23px;
+			color: #43bdde;
+			margin: 3px 0 3px;
+		}
+		
+		> * {
+			margin: 0;
+		}
+		
+		@each $key, $values in $wp-widgets-area-map {
+			
+			#{$key} & {
+				@if (map-get($values, 'text-color') != null) {
+					color: map-get($values, 'text-color');
+				}
+			}
+		}
+	}
+	
+	.qodef-m-action {
+		@include qodefRelativeLayout();
+		margin-top: 12px;
+	}
+	
+	.qodef-m-action-link {
+		@include qodefButtonDefaultStyle();
+		@include qodefButtonSize(full-width);
+		@include qodefButtonFilledColor();
+		line-height: 18px;
+		padding: 15px 20px;
+		&:hover {
+			@include qodefButtonFilledHoverColor();
+		}
+	}
+	
+	.touchevents & {
+		cursor: pointer;
+	}
+	
+	&:hover {
+		
+		.qodef-m-dropdown {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}

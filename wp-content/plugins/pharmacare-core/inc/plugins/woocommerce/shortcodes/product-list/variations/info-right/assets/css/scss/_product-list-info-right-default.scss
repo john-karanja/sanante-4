@@ -1,0 +1,68 @@
+/* ==========================================================================
+   Product List Info Right styles
+   ========================================================================== */
+
+.qodef-woo-product-list {
+	
+	&.qodef-item-layout--info-right {
+		
+		.qodef-woo-product-inner {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+
+			@include qodefScreenSize680 {
+				display: block;
+			}
+
+			.ywpc-countdown-loop {
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+				flex-wrap: wrap;
+			}
+
+			.qodef-woo-product-title {
+				min-height: auto;
+			}
+
+			.qodef-woo-product-excerpt {
+				display: block;
+				margin-top: 7px;
+				margin-bottom: 25px;
+			}
+
+			.price {
+				justify-content: flex-start !important; // for default product list
+				margin-bottom: 4px;
+			}
+
+			.qodef-woo-yith-buttons-inner {
+				justify-content: flex-start !important; // for default product list
+			}
+
+			.qodef-woo-product-image {
+				width: 28.04%;
+				@include qodefScreenSize680 {
+					width: 100%;
+				}
+			}
+
+			.qodef-woo-product-content {
+				width: 71.6%;
+				text-align: left;
+				margin: 26px 0 26px;
+				padding: 0 32px;
+
+				@include qodefScreenSize680 {
+					width: 100%;
+				}
+			}
+
+            .qodef-woo-ratings {
+                margin-bottom: 10px;
+            }
+		}
+	}
+}

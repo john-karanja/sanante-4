@@ -1,0 +1,37 @@
+/* ==========================================================================
+# Product Filter style responsive - begin
+========================================================================== */
+
+.edgtf-subscribe-popup-holder {
+	
+	.edgtf-sp-inner {
+		
+		@include qodefScreenSize1024 {
+			width: 75%;
+		}
+		
+		@include qodefScreenSize768 {
+			width: 90%;
+		}
+		
+		@include qodefScreenSize768 {
+			min-height: 450px;
+		}
+	}
+	
+	@include qodefScreenSize768 {
+		
+		.edgtf-sp-content-container {
+			width: 100%;
+			padding: 0 40px;
+		}
+		
+		.edgtf-sp-background {
+			display: none;
+		}
+	}
+}
+
+/* ==========================================================================
+# Product Filter style responsive - end
+========================================================================== */

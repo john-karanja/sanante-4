@@ -1,0 +1,86 @@
+/* ==========================================================================
+   Section Title shortcode styles
+   ========================================================================== */
+
+.qodef-section-title {
+	@include qodefRelativeLayout();
+	
+	&.qodef-alignment--center {
+		text-align: center;
+	}
+	
+	&.qodef-alignment--left {
+		text-align: left;
+		
+		&.qodef-title-decoration {
+			.qodef-m-title {
+				padding-left: 0;
+			}
+		}
+	}
+	
+	&.qodef-alignment--right {
+		text-align: right;
+		
+		&.qodef-title-decoration {
+			.qodef-m-title {
+				padding-right: 0;
+			}
+		}
+	}
+
+	&.qodef-title-decoration {
+		
+		&:before {
+			content: '';
+			display: inline-block;
+			width: 100%;
+			height: 8px;
+			background-color: $additional-background-color;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 3;
+		}
+
+		.qodef-m-title {
+			display: inline;
+			background-color: #fff;
+			position: relative;
+			z-index: 5;
+			padding: 0 27px;
+		}
+	}
+	
+	.qodef-m-title {
+		margin: 0;
+	}
+	
+	.qodef-m-text {
+		margin: 12px 0 0;
+		font-size: $additional-text-font-size;
+		line-height: $text-line-height-em;
+		letter-spacing: 0;
+	}
+
+	&.qodef-appear-animation--enabled {
+
+		&.qodef-title-decoration {
+
+			&:before {
+				transform: scaleX(0);
+				transform-origin: center;
+				transition: transform .6s cubic-bezier(0.4, 0.1, 0.26, 0.66);
+			}
+
+			&.qodef--appeared,
+			.elementor-editor-active & {
+
+				&:before {
+					transform: scaleX(1);
+				}
+			}
+		}
+	}
+}

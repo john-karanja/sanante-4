@@ -1,0 +1,134 @@
+@include qodefScreenSize1440 {
+	
+	.qodef-image-carousel {
+		.qodef-pc-holder-inner .qodef-pc-carousel-holder {
+			//padding: 0 20px 0 50px;
+			padding: 0 20px;
+		}
+		
+		.qodef-pc-image-holder {
+			width: 50%;
+		}
+		
+		.qodef-pc-holder-inner {
+			width: 50%;
+			margin-left: 50%;
+		}
+		
+		.qodef-pc-item-holder {
+			padding: 20px 0;
+			
+			.qodef-pc-item-digit-holder {
+				font-size: 40px;
+			}
+			
+			.qodef-pc-item-content-holder {
+				padding-left: 75px;
+			}
+		}
+	}
+}
+
+@include qodefScreenSize1024 {
+	
+	.qodef-image-carousel {
+		.qodef-pc-image-holder {
+			position: relative;
+			width: 100%;
+			height: auto;
+			
+			.qodef-pc-item-image {
+				background-image: none;
+				height: auto;
+			}
+			
+			.qodef-pc-item-actual-image {
+				display: block;
+			}
+		}
+		
+		.qodef-pc-holder-inner {
+			width: 100%;
+			margin-left: 0;
+		}
+		
+		.qodef-pc-image-slider,
+		.slick-list,
+		.slick-track {
+			height: auto;
+		}
+		
+		.qodef-pc-item-holder {
+			padding-top: 30px;
+			padding-bottom: 40px;
+		}
+	}
+}
+
+@include qodefScreenSize1024 {
+	
+	.qodef-image-carousel {
+		.qodef-pc-item-image-preload{
+			display: none;
+		}
+		.qodef-pc-holder-inner {
+			
+			.qodef-pc-carousel-holder {
+				padding: 0 60px;
+			}
+		}
+	}
+}
+
+@include qodefScreenSize768 {
+	
+	.qodef-image-carousel {
+		
+		.qodef-pc-holder-inner {
+			
+			.qodef-pc-carousel-holder {
+				padding: 0 60px;
+			}
+		}
+	}
+}
+
+@include qodefScreenSize680 {
+	
+	.qodef-image-carousel {
+		.qodef-pc-holder-inner .qodef-pc-carousel-holder {
+			padding: 0 10px;
+		}
+		
+		.qodef-pc-item-holder {
+			padding: 0;
+			
+			.qodef-pc-item-title {
+			}
+			
+			.qodef-pc-item-digit-holder {
+				font-size: 40px;
+			}
+			
+			.qodef-pc-item-content-holder {
+				padding-left: 65px;
+			}
+		}
+
+		.qodef-owl-slider {
+
+			.owl-nav {
+				z-index: 2;
+
+				.owl-prev {
+					left: -13px;
+				}
+
+				.owl-next {
+					right: -13px;
+				}
+			}
+		}
+	}
+}
+

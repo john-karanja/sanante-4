@@ -1,0 +1,32 @@
+.qodef-banner {
+	
+	&.qodef-layout--link-overlay {
+
+		.qodef-m-image {
+			overflow: hidden;
+
+			img {
+				transform: scale(1);
+				transition: transform .6s cubic-bezier(0.6, 0.24, 0.26, 0.96);
+				will-change: transform;
+			}
+		}
+		
+		.qodef-m-content-inner {
+			align-items: flex-start;
+			flex-direction: column;
+			justify-content: center;
+			padding: 30px;
+		}
+
+		&:hover {
+
+			.qodef-m-image {
+
+				img {
+					transform: scale(1.02);
+				}
+			}
+		}
+	}
+}

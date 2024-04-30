@@ -1,0 +1,38 @@
+/* ==========================================================================
+   Icon List Item widget styles
+   ========================================================================== */
+
+$wp-widgets-area-map: (
+		'#qodef-page-sidebar': (
+				margin-bottom: 0,
+				color: #2c2c2c,
+				font-weight: 500,
+				font-size: 16px,
+				line-height: 19px,
+		),
+		'#qodef-page-footer': (
+				margin-bottom: 14px,
+				color: #2c2c2c,
+				font-weight: 500,
+				font-size: 16px,
+				line-height: 19px,
+		),
+		'#qodef-side-area': (
+				margin-bottom: 0,
+				color: #2c2c2c,
+				font-weight: 500,
+				font-size: 16px,
+				line-height: 19px,
+		)
+);
+.widget.widget_pharmacare_core_icon_list_item {
+	@each $key, $values in $wp-widgets-area-map {
+		#{$key} & {
+			margin-bottom: map-get($values, 'margin-bottom');
+			color:  map-get($values, 'color');
+			font-weight:  map-get($values, 'font-weight');
+			font-size:  map-get($values, 'font-size');
+			line-height:  map-get($values, 'line-heigth');
+		}
+	}
+}

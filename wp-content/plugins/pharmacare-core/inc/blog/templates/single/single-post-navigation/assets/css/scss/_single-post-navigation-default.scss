@@ -1,0 +1,75 @@
+/* ==========================================================================
+   Single Post Navigation styles
+   ========================================================================== */
+
+#qodef-single-post-navigation {
+	@include qodefRelativeLayout();
+	margin: 23px 0 3px;
+	padding: 0 223px;
+	
+	@include qodefScreenSize1024 {
+		padding: 0;
+	}
+	
+	.qodef-m-inner {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	
+	.qodef-m-nav {
+		position: relative;
+		display: flex;
+		align-items: center;
+		
+		> * {
+			display: block;
+			line-height: inherit;
+		}
+		
+		.qodef-m-pagination-icon {
+			position: relative;
+			top: -2px;
+			display: block;
+			width: 30px;
+			height: auto;
+			fill: currentColor;
+			stroke: none;
+		}
+		
+		&.qodef--prev {
+			left: 0;
+			
+			.qodef-icon-fontkiko {
+				font-size: 17px;
+				font-weight: 400;
+				color: #54B848;
+				margin-right: 8px;
+			}
+		}
+		
+		&.qodef--next {
+			flex-direction: row-reverse;
+			right: 0;
+			margin-left: auto;
+			text-align: right;
+			
+			.qodef-icon-fontkiko {
+				font-size: 17px;
+				font-weight: 400;
+				color: #54B848;
+				margin-left: 8px;
+			}
+		}
+	}
+	
+	.qodef-m-nav-label {
+		font-weight: 500;
+		font-size: 16px;
+		color: #2c2c2c;
+		line-height: 19px;
+		letter-spacing: 0;
+		text-transform: none;
+	}
+}

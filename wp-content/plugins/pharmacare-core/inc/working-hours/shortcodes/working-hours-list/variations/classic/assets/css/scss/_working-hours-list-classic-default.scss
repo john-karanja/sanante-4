@@ -1,0 +1,112 @@
+/* ==========================================================================
+   Working Hours List shortcode styles
+   ========================================================================== */
+
+.qodef-working-hours-list {
+	@include qodefRelativeLayout();
+	
+	&.qodef-layout--classic {
+		background: #54B848;
+		padding: 0 33px 9px;
+		
+		.qodef-working-hours-logo {
+			img {
+				margin: 0 auto;
+				display: inherit;
+				position: relative;
+				top: -22px;
+			}
+		}
+		
+		.qodef-working-hours-list-inner {
+		
+			.qodef-e-item-title {
+				text-align: center;
+				.qodef-e-title {
+					color: #fff;
+					margin-top: 15px;
+					margin-bottom: 24px;
+				}
+			}
+			
+			.qodef-e-working-hours {
+				
+				.qodef-e-item-location {
+					text-align: center;
+					
+					.qodef-location {
+						color: #fff;
+						font-size: 18px;
+						font-weight: 500;
+						letter-spacing: 0;
+						line-height: 21px;
+						margin-bottom: 15px;
+					}
+				}
+			}
+			
+			.qodef-hours-item {
+				margin-bottom: 35px;
+				
+				> p {
+					border-bottom: 2px dotted #fff;
+					color: #fff;
+					font-size: 18px;
+					font-weight: 500;
+					letter-spacing: 0;
+					line-height: 21px;
+
+					@media only screen and (min-width: 1025px) and (max-width: 1194px) {
+						border-bottom: 0;
+					}
+					
+					&.qodef-saturday-hours {
+						margin: 19px 0;
+					}
+					
+					> span {
+						bottom: -6px;
+						line-height: 21px;
+						background: #54B848;
+						position: relative;
+						
+						&:first-child {
+							padding-right: 2px;
+						}
+					}
+					
+					.qodef-hours {
+						float: right;
+						padding-left: 2px;
+
+						@media only screen and (min-width: 1025px) and (max-width: 1194px) {
+							float: left;
+							padding-left: 0;
+							padding-bottom: 10px;
+						}
+					}
+				}
+			}
+
+			.qodef-sunday-hours {
+				@media only screen and (min-width: 1025px) and (max-width: 1194px) {
+					display: inline-block;
+					width: 100%;
+
+					.qodef-label {
+						float: left;
+					}
+
+					.qodef-hours {
+						float: right!important;
+					}
+				}
+			}
+		}
+		
+	}
+}
+
+/* ==========================================================================
+   Working Hours List shortcode styles
+   ========================================================================== */

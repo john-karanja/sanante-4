@@ -1,0 +1,149 @@
+/* ==========================================================================
+   Fixed Background Slider shortcode responsive style - begin
+   ========================================================================== */
+@media only screen and (max-width: 1680px){
+
+  .qodef-fixed-background-slider {
+
+    &.qodef-layout--fixed-text {
+
+      .qodef-e-fixed-text-holder {
+
+        .qodef-e-fixed-text {
+          font-size: 100px;
+        }
+
+        .qodef-e-fixed-text-one, .qodef-e-fixed-text-two {
+          top: 40%;
+        }
+      }
+    }
+  }
+}
+
+@include qodefScreenSize1440 {
+
+  .qodef-fixed-background-slider {
+
+    &.qodef-layout--fixed-text {
+
+      .qodef-e-fixed-text-holder {
+
+
+        .qodef-e-fixed-text-one, .qodef-e-fixed-text-two {
+          top: 40%;
+        }
+      }
+    }
+  }
+}
+
+@include qodefScreenSize1366 {
+
+  .qodef-fixed-background-slider {
+
+    &.qodef-layout--fixed-text {
+
+      .qodef-e-fixed-text-holder {
+
+        .qodef-e-fixed-text-one, .qodef-e-fixed-text-two {
+          top: 40%;
+        }
+      }
+    }
+  }
+}
+
+@include qodefScreenSize1024 {
+  .qodef-fixed-background-slider {
+    position: relative;
+    //height: calc(100vh - 70px);
+
+    .qodef-e-content {
+      left: 40px;
+      max-width: 80%;
+
+      .qodef-e-title {
+        font-size: 43px;
+      }
+    }
+
+    &.qodef-layout--fixed-text {
+
+      .qodef-e-fixed-text-holder {
+
+        .qodef-e-fixed-text-one, .qodef-e-fixed-text-two {
+          top: 30%;
+        }
+
+        .qodef-e-fixed-text {
+          font-size: 120px;
+        }
+      }
+    }
+  }
+}
+
+@include qodefScreenSize768 {
+
+  .qodef-fixed-background-slider {
+      position: relative;
+      //height: calc(100vh - 70px);
+
+      .qodef-e-content {
+        left: 50px;
+        max-width: 80%;
+      }
+  }
+}
+
+@include qodefScreenSize680 {
+
+  .qodef-fixed-background-slider {
+
+    .qodef-e-content {
+      left: 50px;
+      max-width: 80%;
+
+      .qodef-e-title {
+        font-size: 23px;
+        margin-bottom: 20px;
+      }
+    }
+
+    &.qodef-layout--fixed-text {
+      padding-top: 0;
+
+      .qodef-e-fixed-text-holder {
+        display: none;
+
+        .qodef-e-fixed-text-one, .qodef-e-fixed-text-two {
+          top: 16%;
+        }
+
+        .qodef-e-fixed-text {
+          font-size: 75px;
+        }
+      }
+
+      .qodef-m-items {
+        width: 100%;
+      }
+
+      .swiper-button-prev {
+        left: 0!important;
+      }
+
+      .swiper-button-next {
+        left: 76px!important;
+      }
+    }
+  }
+}
+
+@include qodefScreenSize480 {
+}
+
+/* ==========================================================================
+   Fixed Background Slider shortcode responsive style - end
+   ========================================================================== */

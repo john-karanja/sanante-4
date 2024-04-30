@@ -1,0 +1,110 @@
+/* ==========================================================================
+   Author Info styles
+   ========================================================================== */
+
+#qodef-author-info {
+	@include qodefRelativeLayout();
+	margin-top: 8px;
+	padding: 0 223px 0;
+	
+	.qodef-m-inner {
+		position: relative;
+		display: flex;
+		align-items: center;
+		background: $additional-background-color;
+		padding: 22px 22px 21px;
+		
+		.qodef-m-content {
+			margin-top: -1px;
+			display: flex;
+			align-items: center;
+			
+			.qodef-author-holder {
+				display: block;
+				float: left;
+				margin-right: 38px;
+
+				@include qodefScreenSize1440 {
+					margin-right: 0;
+				}
+				
+				.qodef-m-author-label {
+					font-size: 15px;
+					font-weight: 400;
+					letter-spacing: 0;
+					line-height: 26px;
+					color: #777;
+					
+					.qodef-e-info-category {
+						display: inline;
+						
+						a {
+							font-size: 15px;
+							font-weight: 400;
+							letter-spacing: 0;
+							line-height: 26px;
+							color: #777;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	.qodef-m-image {
+		flex-shrink: 0;
+		margin-right: 22px;
+		
+		a, img {
+			display: block;
+		}
+		
+		img {
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+			border-radius: 50%;
+			border: 1px solid #fff;
+		}
+	}
+	
+	.qodef-m-author {
+		margin: 0;
+		text-transform: none;
+		margin-bottom: 1px;
+		
+		a {
+			&:hover {
+				color: #2c2c2c;
+			}
+		}
+	}
+	
+	.qodef-m-email {
+		margin: 5px 0 0;
+	}
+	
+	.qodef-m-description {
+		margin: -7px 0 0;
+		display: block;
+		float: right;
+		font-size: 15px;
+		color: #777;
+		letter-spacing: 0;
+		max-width: 75%;
+	}
+	
+	.qodef-m-social-icons {
+		margin-top: 18px;
+		
+		a {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			margin-right: 16px;
+			
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}

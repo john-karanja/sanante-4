@@ -1,0 +1,196 @@
+/* ==========================================================================
+   Image With Text shortcode styles
+   ========================================================================== */
+
+.qodef-image-with-text {
+	@include qodefRelativeLayout();
+
+	&.qodef-image-shadow--yes {
+
+		.qodef-m-image {
+
+			img {
+				box-shadow: 4px 4px 60px #ebebeb;
+			}
+		}
+	}
+	
+	.qodef-m-image {
+		@include qodefRelativeLayout();
+		
+		a, img {
+			display: block;
+		}
+
+		> a {
+			will-change: transform;
+			transform: translateY(0);
+			transition: transform 0.3s ease;
+
+			&:hover {
+				transform: translateY(-8px);
+			}
+		}
+	}
+
+	/* class added with js */
+	&.qodef-hovered {
+
+		.qodef-m-image {
+
+			> a {
+				transform: translateY(-8px);
+			}
+		}
+	}
+	
+	.qodef-m-content {
+		@include qodefRelativeLayout();
+
+		span {
+
+			&.qodef-m-title {
+				display: block;
+				@include qodefHeadingStyle(h7);
+
+				a {
+					font-family: inherit;
+					font-size: inherit;
+					font-weight: inherit;
+					font-style: inherit;
+					line-height: inherit;
+					letter-spacing: inherit;
+					text-transform: inherit;
+					color: inherit;
+				}
+			}
+		}
+	}
+	
+	.qodef-m-title {
+		margin: 17px 0 0;
+
+		a {
+			color: currentColor;
+			@include hiddenUnderlineGradient();
+		}
+	}
+
+	/* class added with js */
+	&.qodef-hovered {
+
+		.qodef-m-title {
+
+			a {
+				background-size: 100% 100%;
+			}
+		}
+	}
+	
+	.qodef-m-text {
+		margin: 15px 0 0;
+	}
+
+	&.qodef-layout--text-comment {
+
+			.qodef-m-title {
+				text-transform: none;
+				margin: 26px 0 17px;
+			}
+
+		.qodef-m-image-holder {
+			display: table-cell;
+			float: left;
+			margin-right: 35px;
+		}
+
+		.qodef-m-content {
+			display: table-cell;
+			background: #54B84819;
+			border-radius: 10px;
+			padding: 0 30px 29px 29px;
+
+			@include qodefScreenSize680 {
+				display: inline-block;
+				margin-top: 31px;
+			}
+
+
+			.qodef-m-text,.qodef-m-additional-text {
+				font-size: 18px;
+				letter-spacing: 0;
+			}
+
+			.qodef-m-additional-text {
+				margin-top: 28px;
+			}
+
+			&:before{
+				content: "";
+				display: inline-block;
+				position: absolute;
+				top: 25px;
+				left: -26px;
+				width: 0;
+				height: 0;
+				border-top: 17px solid transparent;
+				border-right: 26px solid #54B84819;
+				border-bottom: 16px solid transparent;
+			}
+		}
+	}
+	
+	&.qodef-layout--author-box {
+		display: flex;
+		align-items: center;
+		
+		.qodef-m-title {
+			margin: 0;
+		}
+		
+		.qodef-m-text {
+			line-height: 26px;
+			margin: 0;
+		}
+		
+		.qodef-m-image-holder {
+			position: relative;
+			vertical-align: top;
+			padding: 0 15px 0 0;
+			color: currentColor;
+			display: inline;
+			align-items: center;
+			
+			.qodef-m-image {
+				width: 50px;
+				
+				a {
+					display: block;
+					
+					img {
+						border-radius: 50%;
+						width: 100%;
+					}
+				}
+			}
+			
+			.qodef-m-content {
+				position: relative;
+				top: -1px;
+			}
+		}
+		
+		.qodef-m-image img {
+			 -webkit-box-shadow: none;
+			 -moz-box-shadow: none;
+			 box-shadow: none;
+		}
+	}
+	
+	&.qodef-skin--light {
+		
+		.qodef-m-title, .qodef-m-text {
+			color: #fff;
+		}
+	}
+}

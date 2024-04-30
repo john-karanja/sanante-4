@@ -1,0 +1,45 @@
+/* ==========================================================================
+   Author Info responsive styles
+   ========================================================================== */
+
+#qodef-author-info {
+
+	@include qodefScreenSize1024 {
+		padding: 0;
+	}
+	
+	@include qodefScreenSize680 {
+		
+		.qodef-m-inner {
+			flex-wrap: wrap;
+
+			.qodef-m-image {
+				margin: 0 auto;
+			}
+
+			.qodef-m-content {
+				//margin-top: 23px;
+				display: block;
+
+				.qodef-author-holder {
+					width: 100%;
+					display: block;
+					text-align: center;
+				}
+
+				.qodef-m-description {
+					float: left;
+					margin-top: 12px;
+					width: 100%;
+					display: block;
+					max-width: 100%;
+					text-align: center;
+				}
+			}
+		}
+		
+		.qodef-m-author {
+			margin-top: 5px
+		}
+	}
+}

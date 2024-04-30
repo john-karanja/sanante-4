@@ -1,0 +1,41 @@
+/* ==========================================================================
+   Related Posts styles
+   ========================================================================== */
+
+#qodef-related-posts {
+	@include qodefRelativeLayout();
+	width: 190px;
+	float: right;
+	
+	@include qodefScreenSize1024 {
+		width: 100%;
+		margin: 30px 0;
+		
+		.qodef-grid {
+			&.qodef-layout--columns.qodef-col-num--1>.qodef-grid-inner>.qodef-grid-item {
+				width: 50%;
+			}
+
+			&.qodef-layout--columns.qodef-col-num--1>.qodef-grid-inner>.qodef-grid-item:nth-child(2n+1) {
+				clear: both!important;
+			}
+		}
+	}
+	
+	@include qodefScreenSize680 {
+		.qodef-grid {
+			&.qodef-layout--columns.qodef-col-num--1>.qodef-grid-inner>.qodef-grid-item {
+				width: 100%;
+			}
+		}
+		
+	}
+	
+	.qodef-e-inner {
+		width: 100%;
+		
+		.qodef-e-content {
+			margin: 6px 0 3px;
+		}
+	}
+}

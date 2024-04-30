@@ -1,0 +1,163 @@
+/* ==========================================================================
+   YITH Countdown global default styles
+   ========================================================================== */
+
+//$single-width: 60%;
+
+%holder-common {
+    background-color: $additional-background-color;
+    padding: 15px 22px !important;
+    @media only screen and (max-width: 1194px) {
+        padding: 15px 0 !important;
+    }
+}
+
+.ywpc {
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // common
+
+    &-label {
+        text-transform: initial !important;
+
+        @include qodefHeadingStyle(h5, true, false, !important);
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // archive
+
+    &-countdown-loop,
+    &-sale-bar-loop {
+        margin: 0;
+
+        @extend %holder-common;
+
+        .ywpc-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include qodefHeadingStyle(h5, true);
+            .qodef-browser--ms-explorer & {
+                text-transform: none;
+            }
+            padding: 0 9px 0 0;
+            text-align: left;
+            width: auto;
+            text-transform: none;
+        }
+    }
+
+    &-countdown-loop {
+
+        > .ywpc-timer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+            > div {
+                &:after {
+                    content: ':';
+                    display: inline-block;
+                    @include qodefHeadingStyle(h5, true);
+                    margin: 0 4px;
+                }
+
+                &:last-child {
+
+                    &:after {
+                        content: none;
+                    }
+                }
+            }
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // single
+
+    &-countdown,
+    &-sale-bar {
+        @extend %holder-common;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        margin: 0 0 17px 0;
+        padding: 0;
+
+        .ywpc-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include qodefHeadingStyle(h5, true);
+
+            @include qodefScreenSize1440 {
+                font-size: 15px;
+                margin-top: 2px;
+            }
+            .qodef-browser--ms-explorer & {
+                text-transform: none;
+            }
+            padding: 0 9px 0 0;
+            text-align: left;
+            width: auto;
+            text-transform: none;
+        }
+    }
+
+    &-countdown {
+        @include qodefScreenSize680 {
+            display: block;
+        }
+
+        .ywpc-timer {
+            width: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            @include qodefScreenSize680 {
+                display: block;
+            }
+
+            > div {
+                @include qodefScreenSize680 {
+                    display: block;
+                    width: 100%;
+                    text-align: left;
+                }
+                &:after {
+                    content: ':';
+                    display: inline-block;
+                    @include qodefHeadingStyle(h5, true);
+                    margin: 0 4px;
+
+                    @include qodefScreenSize1440 {
+                        font-size: 15px;
+                    }
+
+                    @include qodefScreenSize680 {
+                        display: none;
+                    }
+                }
+
+                &:last-child {
+
+                    &:after {
+                        content: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &-sale-bar {
+        .ywpc-bar {
+            width: auto;
+        }
+    }
+}

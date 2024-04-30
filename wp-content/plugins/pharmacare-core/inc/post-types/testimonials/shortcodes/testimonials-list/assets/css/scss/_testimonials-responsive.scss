@@ -1,0 +1,35 @@
+/* ==========================================================================
+   Testimonials list responsive shortcode styles
+   ========================================================================== */
+
+.qodef-testimonials-list {
+
+  @include qodefScreenSize680 {
+
+      .qodef-e-inner {
+          display: block;
+
+          .qodef-e-media-image, .qodef-e-content {
+              display: block;
+          }
+
+          .qodef-e-media-image {
+              margin: 0 auto;
+              width: 100%;
+
+              img {
+                  display: block;
+                  margin: 10px 0;
+              }
+          }
+
+          &.qodef-right-position {
+
+              .qodef-e-media-image img {
+                  margin-left: 0;
+              }
+          }
+      }
+  }
+
+}

@@ -1,0 +1,93 @@
+#qodef-page-spinner {
+
+    &.qodef-layout--pharmacare {
+        height: 100%;
+        transition: height 1s cubic-bezier(0.22, 1, 0.36, 1);
+
+        .qodef-m-pharmacare {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .qodef-m-pill {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            padding: 17px 22px;
+            border-radius: 40px;
+            transform: translateX(101px) translateZ(0);
+            opacity: 0;
+            transition: opacity .3s ease-in-out, transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: transform;
+        }
+
+        .qodef-m-svg {
+            display: flex;
+        }
+
+        .qodef-m-text {
+            font-family: $heading-font;
+            font-size: 34px;
+            font-weight: 700;
+            margin-left: 10px;
+            color: $second-color;
+
+            > * {
+                opacity: 0;
+            }
+
+            .qodef-m-word {
+                display: inline-block;
+                opacity: 0;
+                transition: 1s cubic-bezier(0.22, 1, 0.36, 1) .4s;
+
+                &:nth-child(2n) {
+                    color: $main-color;
+                }
+
+                &.qodef-m-empty-char {
+                    white-space: pre;
+                }
+
+                &.qodef-animate {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &.qodef--init {
+
+            .qodef-m-pill {
+                opacity: 1;
+
+                .qodef-m-svg {
+                    animation: qodef-infinite-rotate 10s cubic-bezier(0.22, 1, 0.36, 1) infinite .12s;
+                }
+            }
+        }
+
+        &.qodef--show {
+
+            .qodef-m-pill {
+                transform: translateX(0) translateZ(0);
+            }
+        }
+
+        body.qodef-spinner--finished & {
+            position: absolute;
+            height: 50vh;
+            pointer-events: none;
+
+            .qodef-m-inner {
+                background-color: transparent;
+                transition: background-color .3s ease-in-out .4s;
+            }
+
+            .qodef-m-svg {
+                animation: none !important;
+            }
+        }
+    }
+}

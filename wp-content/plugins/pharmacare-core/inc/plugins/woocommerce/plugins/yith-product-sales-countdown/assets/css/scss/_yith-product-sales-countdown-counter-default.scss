@@ -1,0 +1,52 @@
+/* ==========================================================================
+   YITH Countdown counter default styles
+   ========================================================================== */
+
+.ywpc {
+    &-days,
+    &-hours,
+    &-minutes,
+    &-seconds {
+        margin: 0 !important;
+        padding: 0;
+        vertical-align: middle;
+        width: auto !important;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+
+        .ywpc-label {
+            text-transform: lowercase !important;
+        }
+    }
+
+    &-hours,
+    &-minutes,
+    &-seconds {
+        //border-left: 1px solid #ffffff;
+    }
+
+    &-days,
+    &-hours {
+
+        .ywpc-amount {
+            margin-right: 4px;
+        }
+    }
+
+    &-amount {
+        line-height: 1em;
+
+        > span {
+            @include qodefHeadingStyle(h5, true, false, !important);
+
+            background-color: transparent !important;
+            border: none !important;
+            height: auto !important;
+            line-height: 1em !important;
+            margin: 0 !important;
+            vertical-align: middle;
+            width: auto !important;
+        }
+    }
+}

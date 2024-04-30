@@ -1,0 +1,198 @@
+/* ==========================================================================
+   Instagram List shortcode styles
+   ========================================================================== */
+
+.qodef-instagram-list {
+
+    #sb_instagram {
+        padding: 0 !important;
+
+        #sbi_images {
+            padding: 0 !important;
+        }
+    
+        &:before {
+            content: '';
+            display: inline-block;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate( -50%, -50%);
+            z-index: 100;
+        }
+    
+        &::after {
+            display: inline-block;
+            content: "\f16d";
+            font-family: "Font Awesome 5 Brands";
+            line-height: 55px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate( -50%, -50%);
+            z-index: 1000;
+            color: #54B848;
+            font-size: 31px;
+        }
+    }
+    
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // common
+
+    .sbi_photo_wrap {
+
+        a {
+            position: relative !important;
+            background-image: none !important;
+            height: auto !important;
+            padding-bottom: 0 !important;
+            opacity: 1 !important;
+
+            &:after {
+                content: '';
+                @include qodefAbsoluteLayout();
+                background-color: rgba(255, 255, 255, .15);
+                opacity: 0;
+                transition: opacity .3s ease-in-out;
+            }
+
+            &:hover {
+
+                &:after {
+                    opacity: 1;
+                }
+            }
+
+            img {
+                display: inline-block !important;
+            }
+        }
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // slider
+
+    &.qodef-layout--slider {
+
+        @for $i from 0 to length($grid-columns-gutter-label) {
+
+            &.qodef-gutter--#{nth($grid-columns-gutter-label,$i+1)} {
+                $gutter-size: nth($grid-columns-gutter-size, $i+1);
+                $gutter-double-size: $gutter-size * 2;
+
+                #sb_instagram {
+
+                    #sbi_images {
+
+                        > .sbi_item {
+                            padding: 0 !important;
+
+                            @if ($gutter-size == 0) {
+                                margin: 0 !important;
+                            } @else {
+                                margin: 0 #{$gutter-double-size}px 0 0 !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .qodef-instagram-swiper-container {
+            list-style: none;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 0 !important;
+            position: relative;
+            visibility: hidden;
+            z-index: 1;
+
+            .swiper-slide {
+
+                a,
+                img {
+                    width: 100%;
+                }
+            }
+
+            &.qodef-swiper--initialized {
+                visibility: visible;
+            }
+        }
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // gallery
+
+    &.qodef-layout--columns {
+
+        @for $i from 0 to length($grid-columns-gutter-label) {
+
+            &.qodef-gutter--#{nth($grid-columns-gutter-label,$i+1)} {
+                $gutter-size: nth($grid-columns-gutter-size, $i+1);
+                $gutter-double-size: $gutter-size * 2;
+
+                &.qodef--no-bottom-space {
+                    @if ($gutter-size == 0) {
+                        margin-bottom: 0;
+                    } @else {
+                        margin-top: #{$gutter-double-size}px;
+                    }
+                }
+
+                #sb_instagram {
+
+                    #sbi_images {
+                        float: none;
+                        width: auto;
+
+                        @if ($gutter-size == 0) {
+                            margin: 0;
+                        } @else {
+                            margin: 0 -#{$gutter-size}px;
+                        }
+
+                        > .sbi_item {
+                            @if ($gutter-size == 0) {
+                                padding: 0 !important;
+                                margin: 0 !important;
+                            } @else {
+                                padding: 0 #{$gutter-size}px !important;
+                                margin: 0 0 #{$gutter-double-size}px !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    //&.qodef-col-num--2 {
+    //
+    //    #sb_instagram #sbi_images>.sbi_item {
+    //
+    //        &:nth-child(3), &:nth-child(4) {
+    //            margin-bottom: 0!important;
+    //        }
+    //    }
+    //
+    //
+    //}
+}
+
+.widget_pharmacare_core_instagram_list {
+    .qodef-instagram-list #sb_instagram {
+        
+        &:before, &:after {
+            transform: translateX( -50%);
+        }
+    }
+}
+
+/* ==========================================================================
+   Instagram List shortcode styles
+   ========================================================================== */

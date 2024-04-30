@@ -1,0 +1,97 @@
+/* ==========================================================================
+   Blog List styles
+   ========================================================================== */
+
+.qodef-blog {
+	
+	&.qodef-item-layout--classic {
+		
+		.qodef-blog-item .qodef-e-inner {
+			width: 100%;
+		}
+		
+		&.qodef-col-num--1 {
+		
+			article:not(:last-child) {
+				
+				.qodef-e-info {
+					
+					&.qodef-info--bottom {
+						margin-bottom: 28px;
+					}
+				}
+				
+				&.format-link {
+					
+					.qodef-e-link {
+						margin-bottom: 50px;
+					}
+				}
+				
+				&.format-quote {
+					
+					.qodef-e-quote {
+						margin-bottom: 50px;
+					}
+				}
+			}
+			
+			.qodef-m-pagination {
+				
+				&.qodef--classic .qodef-m-pagination-items {
+					padding-left: 214px;
+				}
+			}
+		}
+		
+		&:not(.qodef-col-num--1) {
+			
+			article {
+				
+				&.format-link {
+					
+					.qodef-e-link-icon {
+						right: 40px;
+						width: 140px;
+					}
+				}
+			}
+		}
+		
+		.qodef-e-media {
+			margin-bottom: 19px;
+		}
+		
+		.qodef-e-excerpt {
+			font-size: 15px;
+			font-weight: 400;
+			line-height: 26px;
+			color: #777;
+			margin: 15px 0 3px;
+		}
+		
+		.qodef-e-info-custom-date {
+			top: 18px;
+			right: 16px;
+			
+			.qodef-short-date {
+				width: 64px;
+				height: 64px;
+				
+				.qodef-e-info-date-day {
+					padding-top: 13px;
+				}
+				
+				.qodef-e-info-date-day, .qodef-e-info-date-month {
+					font-size: 18px;
+					letter-spacing: 0;
+					line-height: 19px;
+				}
+			}
+		}
+
+		.qodef-blog-item .qodef-e-info .qodef-e-info-item.qodef-e-info-author .qodef-e-info-author-link {
+			margin-bottom: 0;
+		}
+	}
+}

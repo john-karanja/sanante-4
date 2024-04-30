@@ -1,0 +1,134 @@
+/* ==========================================================================
+   Top area style - begin
+   ========================================================================== */
+$left-right-spacing: 12px;
+
+#qodef-top-area {
+    position: relative;
+    background-color: #fff;
+    z-index: 101; /* Header has Z-index 100, top header has greater value because of dropdown in header top (wpml) */
+
+    &-inner {
+        align-items: center;
+        display: flex;
+        height: 40px;
+        justify-content: space-between;
+        padding: $full-width-side-padding;
+        position: relative;
+
+        &.qodef-content-grid {
+            padding: 0 !important;
+        }
+    }
+
+    .qodef-widget-holder {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        
+        // IE11 issues with flexbox and search form item
+        &.qodef-top-area-left {
+            margin-right: auto;
+        }
+    
+        &.qodef-top-area-right {
+            margin-left: auto;
+        }
+        
+        .widget {
+            margin: 0;
+            
+            &:first-child {
+                margin-left: 0;
+            }
+            
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    
+    .widget {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 1;
+    
+        .textwidget > *,
+        .widget p {
+            margin: 0;
+        }
+    }
+    
+    div[id^="monster-widget-placeholder"],
+    div[id^="woo-monster-widget-placeholder"] {
+        display: none;
+    }
+}
+
+#qodef-top-message-holder {
+    display: inline-block;
+    width: 100%;
+    height: 45px;
+    text-align: center;
+    background: $additional-background-color;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    -ms-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+    
+    .qodef-bold-word {
+        font-family: $text-font;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0;
+        line-height: 45px;
+        color: $heading-color;
+    }
+    
+    .qodef-top-message-inner {
+        height: 100%;
+        a {
+            font-family: $text-font;
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 0;
+            line-height: 45px;
+            color: $heading-color;
+        }
+        
+        .qodef-close-message {
+            display: inline-block;
+            height: 25px;
+            width: 25px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            background: $main-color;
+            line-height: 25px;
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            
+            &:hover {
+                cursor: pointer;
+            }
+            
+            .qodef-icon-fontkiko {
+                color: #fff;
+                font-size: 13px;
+            }
+        }
+    }
+    
+    &.qodef-close-message {
+        opacity: 0;
+    }
+
+    @include qodefScreenSize680 {
+        display: none;
+    }
+}
+/* ==========================================================================
+   Top area style - end
+   ========================================================================== */

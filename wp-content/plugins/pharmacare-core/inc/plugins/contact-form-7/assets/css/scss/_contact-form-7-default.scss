@@ -1,0 +1,80 @@
+/* ==========================================================================
+	   Contact Form 7 style - begin
+   ========================================================================== */
+
+//ask your pharmacist form
+.custom-contact {
+
+    .two_columns_50_50 {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+
+        > label {
+            width: 49%;
+        }
+    }
+
+    .one_columns_100 {
+        width: 100%;
+    }
+
+    label {
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 19px;
+        color: #2c2c2c;
+
+        .qodef-green{
+            color: #54B848;
+        }
+    }
+
+    input {
+        margin-top: 8px;
+        margin-bottom: 16px;
+        border: 1px solid rgba(#adadad, .7);
+        height: 55px;
+    }
+
+    textarea {
+        border: 1px solid rgba(#adadad, .7);
+        margin-top: 8px;
+    }
+
+    .qodef-question {
+
+        > label {
+            margin-bottom: 10px;
+        }
+    }
+
+    .qodef-button {
+
+        &.wpcf7-submit {
+            background: #54B848;
+            padding: 19px 30px;
+            
+            &:hover {
+                background: #54B848;
+            }
+
+            .qodef-m-text {
+                font-size: 13px;
+                font-weight: 700;
+                letter-spacing: 0.1em;
+                line-height: 15px;
+                color: #fff;
+            }
+        }
+    }
+}
+
+
+/* ==========================================================================
+	   Contact Form 7 style - end
+   ========================================================================== */

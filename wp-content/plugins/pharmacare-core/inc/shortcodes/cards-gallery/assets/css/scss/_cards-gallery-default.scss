@@ -1,0 +1,234 @@
+/* ==========================================================================
+   Cards Gallery shortcode style - begin
+   ========================================================================== */
+
+.qodef-cards-gallery {
+	@include qodefRelativeLayout();
+	padding: 10px 0;
+	
+	.qodef-e-inner {
+		@include qodefRelativeLayout();
+	}
+	
+	img {
+		position: relative;
+		display: block;
+		box-shadow: $box-shadow;
+	}
+	
+	.qodef-m-fake-card {
+		position: relative;
+		display: block;
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+	}
+	
+	.qodef-m-card {
+		position: absolute;
+		transition: all .15s ease;
+
+		img {
+			box-shadow: $box-shadow;
+		}
+		
+		&.qodef-animating {
+			transition: all 1s cubic-bezier(.19, 1, .22, 1);
+			pointer-events: none;
+		}
+		
+		&.qodef-animating-siblings {
+			transition: all .6s cubic-bezier(0, 0, 0, 1);
+			pointer-events: none;
+		}
+	}
+	
+	&.qodef-orientation--left .qodef-m-card {
+		left: 0;
+		will-change: transform;
+		
+		&.qodef-out {
+			transform: translateX(-100%);
+		}
+		
+		&:nth-last-child(6) {
+			transform: scale(.5) translateX(80%);
+
+			&:hover {
+				transform: scale(.5) translateX(calc(80% + 15px));
+			}
+		}
+		
+		&:nth-last-child(5) {
+			transform: scale(.6) translateX(54%);
+
+			&:hover {
+				transform: scale(.6) translateX(calc(54% + 15px));
+			}
+		}
+		
+		&:nth-last-child(4) {
+			transform: scale(.7) translateX(35%);
+
+			&:hover {
+				transform: scale(.7) translateX(calc(35% + 15px));
+			}
+		}
+		
+		&:nth-last-child(3) {
+			transform: scale(.8) translateX(21%);
+
+			&:hover {
+				transform: scale(.8) translateX(calc(21% + 15px));
+			}
+		}
+		
+		&:nth-last-child(2) {
+			transform: scale(.9) translateX(9.2%);
+
+			&:hover {
+				transform: scale(.9) translateX(calc(9.2% + 15px));
+			}
+		}
+		
+		&:not(:last-of-type) {
+			cursor: pointer;
+		}
+		
+		&:not(:last-of-type):not(.active):hover {
+			margin-left: 10px !important;
+		}
+	}
+	
+	&.qodef-orientation--right .qodef-m-card {
+		right: 0;
+		will-change: transform;
+		
+		&.qodef-out {
+			transform: translateX(100%);
+		}
+		
+		&:nth-last-child(6) {
+			transform: scale(.5) translateX(-80%);
+
+			&:hover {
+				transform: scale(.5) translateX(calc(-80% - 15px));
+			}
+		}
+		
+		&:nth-last-child(5) {
+			transform: scale(.6) translateX(-54%);
+
+			&:hover {
+				transform: scale(.6) translateX(calc(-54% - 15px));
+			}
+		}
+		
+		&:nth-last-child(4) {
+			transform: scale(.7) translateX(-35%);
+
+			&:hover {
+				transform: scale(.7) translateX(calc(-35% - 15px));
+			}
+		}
+		
+		&:nth-last-child(3) {
+			transform: scale(.8) translateX(-21%);
+
+			&:hover {
+				transform: scale(.8) translateX(calc(-21% - 15px));
+			}
+		}
+		
+		&:nth-last-child(2) {
+			transform: scale(.9) translateX(-9.2%);
+
+			&:hover {
+				transform: scale(.9) translateX(calc(-9.2% - 15px));
+			}
+		}
+		
+		&:not(:last-of-type) {
+			cursor: pointer;
+		}
+	}
+	
+	.no-touchevents &.qodef-animation--bundle {
+
+		img {
+			visibility: hidden;
+		}
+		
+		&.qodef-orientation--right.qodef-appeared {
+			@include keyframes(qodefCardAppearFromRight) {
+				0% {
+					transform: translate3d(30%, 0, 0);
+					opacity: 0;
+					visibility: visible;
+				}
+				
+				30% {
+					opacity: 1;
+					visibility: visible;
+				}
+				
+				100% {
+					visibility: visible;
+					transform: translate3d(0, 0, 0);
+				}
+			}
+			
+			img {
+				animation: qodefCardAppearFromRight 1.4s cubic-bezier(.19, 1, .22, 1) forwards;
+			}
+			
+			.qodef-m-card {
+				@for $i from 1 through 8 {
+					&:nth-child(#{$i}) {
+						img:not(.qodef-animation-done) {
+							animation-delay: $i * .3s;
+						}
+					}
+				}
+			}
+		}
+		
+		&.qodef-orientation--left.qodef-appeared {
+			@include keyframes(qodefCardAppearFromLeft) {
+				0% {
+					visibility: visible;
+					opacity: 0;
+					transform: translate3d(-30%, 0, 0);
+				}
+				
+				30% {
+					visibility: visible;
+					opacity: 1;
+				}
+				
+				100% {
+					visibility: visible;
+					transform: translate3d(0, 0, 0);
+				}
+			}
+			
+			img {
+				animation: qodefCardAppearFromLeft 1.4s cubic-bezier(.19, 1, .22, 1) forwards;
+			}
+			
+			.qodef-m-card {
+				@for $i from 1 through 8 {
+					&:nth-child(#{$i}) {
+						img:not(.qodef-animation-done) {
+							animation-delay: $i * .3s;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Cards Gallery shortcode style - begin
+   ========================================================================== */

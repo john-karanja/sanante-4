@@ -1,0 +1,12 @@
+<?php
+
+define( 'PHARMACARE_ROOT', get_template_directory_uri() );
+define( 'PHARMACARE_ROOT_DIR', get_template_directory() );
+define( 'PHARMACARE_ASSETS_ROOT', PHARMACARE_ROOT . '/assets' );
+define( 'PHARMACARE_ASSETS_ROOT_DIR', PHARMACARE_ROOT_DIR . '/assets' );
+define( 'PHARMACARE_ASSETS_CSS_ROOT', PHARMACARE_ASSETS_ROOT . '/css' );
+define( 'PHARMACARE_ASSETS_CSS_ROOT_DIR', PHARMACARE_ASSETS_ROOT_DIR . '/css' );
+define( 'PHARMACARE_ASSETS_JS_ROOT', PHARMACARE_ASSETS_ROOT . '/js' );
+define( 'PHARMACARE_ASSETS_JS_ROOT_DIR', PHARMACARE_ASSETS_ROOT_DIR . '/js' );
+define( 'PHARMACARE_INC_ROOT', PHARMACARE_ROOT . '/inc' );
+define( 'PHARMACARE_INC_ROOT_DIR', PHARMACARE_ROOT_DIR . '/inc' );
